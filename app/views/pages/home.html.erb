@@ -1,1 +1,1 @@
-<%=  user_signed_in? ? render: "landing_page" : render: "signup" %>
+<%= @user ? (render "landing_page") : (render "signup") %>

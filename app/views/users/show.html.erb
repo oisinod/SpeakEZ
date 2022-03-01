@@ -5,4 +5,7 @@
   <li><%= "#{user_language.language.name} - #{user_language.skill_level} "  %></li>
   <% end %>
 </ul>
-<%= link_to "Add a new language", new_user_user_language_path(@user) if @user = current_user %>
+
+<% if policy(User).show? %>
+<%= link_to "Add a new language", new_user_user_language_path(@user) %>
+<% end %>

@@ -1,0 +1,8 @@
+<h1><%= @user.username %></h1>
+
+<ul>
+  <% @user.user_languages.each do |user_language| %>
+  <li><%= "#{user_language.language.name} - #{user_language.skill_level} "  %></li>
+  <% end %>
+</ul>
+<%= link_to "Add a new language", new_user_user_language_path(@user) if @user = current_user %>

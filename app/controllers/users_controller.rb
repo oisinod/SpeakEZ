@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = policy_scope(User)
     @user = current_user
-    authorize @user
     if params[:search].present?
       @users = User.global_search(params[:search][:query])
     else

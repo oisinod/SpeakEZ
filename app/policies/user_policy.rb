@@ -4,6 +4,16 @@ class UserPolicy < ApplicationPolicy
     # def resolve
     #   scope.all
     # end
+    def initialize(user, scope)
+      @user  = user
+      @scope = scope
+    end
+
+    def resolve
+      scope.all
+    end
+
+    attr_reader :user, :scope
   end
 
   def show?

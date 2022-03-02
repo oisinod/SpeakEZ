@@ -6,8 +6,9 @@ class UserLanguagePolicy < ApplicationPolicy
     # end
 
   end
+
   def new?
-    record.user == user
+    user
   end
 
   def create?

@@ -1,6 +1,6 @@
 <div class="container">
   <div>
-    <%= simple_form_for([@user, @user_language]) do |f| %>
+    <%= simple_form_for([current_user, @user_language]) do |f| %>
       <%= f.association :language, label_method: :name, value_method: :id, include_blank: false %>
       <%= f.input :skill_level, required: true %>
       <%= f.input :learning, as: :select, label: "Are you learning this language?", include_blank: false %>

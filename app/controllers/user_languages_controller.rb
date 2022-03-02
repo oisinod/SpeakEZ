@@ -1,20 +1,17 @@
 class UserLanguagesController < ApplicationController
   def new
-    @user = User.find(params[:user_id])
     @user_language = UserLanguage.new
-    @user_language.user = @user
     authorize @user_language
   end
 
   def create
     @user_language = UserLanguage.new(user_language_params)
     @user_language.user = current_user
-    @user_language.language = Language.find(params[:user_language][:language_id])
     authorize @user_language
     if @user_language.save
       redirect_to user_path(current_user)
     else
-      render :new
+      render :new # .html.erb JUST THE HTML , NOT THE ACTION
     end
   end
 

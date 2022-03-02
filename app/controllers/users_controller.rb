@@ -3,17 +3,13 @@ class UsersController < ApplicationController
     @users = policy_scope(User)
     @user = current_user
     if params[:language].present?
-      @users = Language.find_by(name: params[:language]).users.distinct
-      raise
-      # Gets the object of the actual language here
-      # @language = Language.find_by(name: params[:language])
-      # # Now gets the user languages who have this language
-      # @user_languages = UserLanguage.where(language: @language)
-      # # Now you should return each user associated with the above active record relation
-      # @users = @user_languages.map do |language|
-      #   language.user
-      # end
-
+      @language = Language.find_by(name: params[:language])
+      #gets the instances of the user languages, will then filter by who is learning it or not
+      @user_languages = @language.user_languages
+      # have all the users which have this language as a user language, now i need to filter by the ones that have learning as false
+      @users = @user_languages.where(learning: false).map do |user_language|
+        user_language.user
+      end
     end
   end
 

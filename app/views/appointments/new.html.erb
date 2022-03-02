@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="card">
+    <%= simple_form_for([@receiver, @appt]) do |f| %>
+      <%= f.input :datetime, html5:true %>
+      <%= f.input :location %>
+      <%= f.submit 'Send request', class: 'btn btn-primary'  %>
+    <% end %>
+  </div>
+</div>

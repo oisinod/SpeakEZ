@@ -13,7 +13,6 @@ class AppointmentsController < ApplicationController
     @appt = Appointment.new(appt_params)
     @appt.receiver = User.find(params[:user_id])
     @appt.asker = current_user
-
     if @appt.save!
     #needs to be changed to dashboard once that path exists!
       redirect_to user_path(@appt.receiver)

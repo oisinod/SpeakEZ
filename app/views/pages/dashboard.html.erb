@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Your Dashboard</h1>
+  <h2>Upcoming meetings:</h2>
+  <h2>Incoming requests</h2>
+  <% @outgoing.each do |request| %>
+    <div class="card">
+      <%= request.receiver.first_name %>
+      <%= request.datetime %>
+      <%= request.location %>
+    </div>
+    <% end %>
+  <h2>Your requests</h2>
+  <% @incoming.each do |request| %>
+    <div class="card">
+      <%= request.receiver.first_name %>
+      <%= request.datetime %>
+      <%= request.location %>
+    </div>
+  <% end %>
+</div>

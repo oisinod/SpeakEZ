@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2022_03_02_114638) do
     t.boolean "validated", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "learning", default: false
     t.index ["language_id"], name: "index_user_languages_on_language_id"
     t.index ["user_id"], name: "index_user_languages_on_user_id"
   end

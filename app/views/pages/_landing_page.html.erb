@@ -1,1 +1,9 @@
-this is the landing page
+<h2>Which of your languages would you like to improve today?</h2>
+ <ul>
+ <%  user_languages.where(learning:true).each do |user_language| %>
+    <li>
+    <%= link_to user_language.language.name, users_path( language: "#{user_language.language.name}")  %>
+
+    </li>
+    <% end %>
+</ul>

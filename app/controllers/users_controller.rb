@@ -16,5 +16,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     authorize @user
+    @learning = @user.user_languages.where(learning: true)
+    @speaking = @user.user_languages.where(learning: false)
   end
 end

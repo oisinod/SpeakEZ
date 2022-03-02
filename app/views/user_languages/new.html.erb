@@ -1,0 +1,9 @@
+<div class="container">
+  <div>
+    <%= simple_form_for([@user, @user_language]) do |f| %>
+      <%= f.association :language, label_method: :name, value_method: :id, include_blank: false %>
+      <%= f.input :skill_level, required: true %>
+      <%= f.submit 'Request', class: 'btn btn-primary'  %>
+    <% end %>
+  </div>
+</div>

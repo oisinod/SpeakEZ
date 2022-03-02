@@ -1,0 +1,39 @@
+.arc {
+  border: 3px solid #000;
+  border-radius: 50%;
+  height: 100px;
+  margin: 0;
+  width: 100px;
+
+
+}
+
+.level-1{
+  border-top-color: #0000;
+  border-left-color: black;
+  transform: rotate(50deg);
+}
+
+.level-2{
+  border-top-color: #0000;
+  border-left-color: rgba(0, 0, 0, 0);
+  transform: rotate(130deg);
+}
+
+.level-3{
+  border-top-color: #0000;
+  border-left-color: black;
+  transform: rotate(50deg);
+}
+
+.level-4{
+  border-top-color: #0000;
+  border-left-color: black;
+  transform: rotate(50deg);
+}
+
+.level-5{
+  border-top-color: rgb(0, 0, 0);
+  border-left-color: rgba(0, 0, 0, 0);
+
+}

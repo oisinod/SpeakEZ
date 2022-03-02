@@ -12,7 +12,7 @@
   <h2>Your requests</h2>
   <% @incoming.each do |request| %>
     <div class="card">
-      <%= request.receiver.first_name %>
+      <%= request.asker.first_name %>
       <%= request.datetime %>
       <%= request.location %>
     </div>

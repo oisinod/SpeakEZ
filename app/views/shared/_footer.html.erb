@@ -23,7 +23,7 @@
       <div class="col-4">
         <div class="icon-box">
         <%# link to Profile from User %>
-          <%= link_to user_path(@user) do %>
+          <%= link_to current_user do %>
           <%= image_tag "profile.png", class: "icon" %>
           <% end %>
         </div>

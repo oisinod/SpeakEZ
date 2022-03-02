@@ -3,13 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
-    @user_languages = @user.user_languages
-  end
-
-  def dashboard
-    @user = current_user
-    @outgoing = current_user.appointments_as_asker
-    @incoming = current_user.appointments_as_receiver
-    # @review = Review.new
+    @user_languages = @user.user_languages if @user
   end
 end

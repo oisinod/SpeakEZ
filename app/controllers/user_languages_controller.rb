@@ -21,6 +21,6 @@ class UserLanguagesController < ApplicationController
   private
 
   def user_language_params
-    params.require(:user_language).permit(:skill_level, :language_id)
+    params.require(:user_language).permit(:skill_level, :language_id, :learning)
   end
 end

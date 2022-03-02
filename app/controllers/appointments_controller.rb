@@ -15,7 +15,7 @@ class AppointmentsController < ApplicationController
     @appt.asker = current_user
 
     if @appt.save!
-    #needs to be changed to dashboard once that path excists!
+    #needs to be changed to dashboard once that path exists!
       redirect_to user_path(@appt.receiver)
     else
       render :new
@@ -23,9 +23,17 @@ class AppointmentsController < ApplicationController
     authorize @appt
   end
 
+  def update
+    @appt = Appointment.find(params[:id])
+    params[:q].to_i == 1 ? @appt.status = "confirmed" : @appt.status = "declined"
+    @appt.save!
+    redirect_to dashboard_path
+    authorize @appt
+  end
+
   private
 
   def appt_params
-    params.require(:appointment).permit(:location, :datetime)
+    params.require(:appointment).permit(:location, :datetime, :status)
   end
 end

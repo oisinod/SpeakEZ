@@ -2,17 +2,23 @@
   <h1>Your Dashboard</h1>
   <h2>Upcoming meetings:</h2>
   <h2>Incoming requests</h2>
-  <% @outgoing.each do |request| %>
-    <div class="card">
-      <%= request.receiver.first_name %>
-      <%= request.datetime %>
-      <%= request.location %>
-    </div>
-    <% end %>
-  <h2>Your requests</h2>
   <% @incoming.each do |request| %>
     <div class="card">
       <%= request.asker.first_name %>
+      <%= request.datetime %>
+      <%= request.location %>
+      <%= request.status %>
+      <%# just added accept an decline here to test - will move to details page after %>
+      <div>
+        <%= link_to "Accept", appointment_path(request, q: 1), method: :patch , data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
+        <%= link_to "Decline", appointment_path(request, q: 0), method: :patch , data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
+      </div>
+    </div>
+    <% end %>
+  <h2>Your requests</h2>
+  <% @outgoing.each do |request| %>
+    <div class="card">
+      <%= request.receiver.first_name %>
       <%= request.datetime %>
       <%= request.location %>
     </div>

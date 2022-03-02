@@ -3,6 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
-    @user_languages = @user.user_languages
+    @user_languages = @user.user_languages if @user
   end
 end

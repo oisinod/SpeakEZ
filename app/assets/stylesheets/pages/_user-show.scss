@@ -1,0 +1,12 @@
+.profile-banner{
+  height: 30vh;
+  width: 100%;
+  background-size: contain;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: relative;
+
+  .btn-primary{
+    position: absolute;
+  }
+}

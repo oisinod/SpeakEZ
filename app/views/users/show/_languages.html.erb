@@ -1,0 +1,17 @@
+<h2>Speaks</h2>
+<ul>
+  <% @speaking.each do |user_language| %>
+  <li><%= "#{user_language.language.name} - #{user_language.skill_level} - #{user_language.learning} "  %></li>
+  <% end %>
+</ul>
+
+<h2>Learning</h2>
+<ul>
+  <% @learning.each do |user_language| %>
+  <li><%= "#{user_language.language.name} - #{user_language.skill_level} - #{user_language.learning} "  %></li>
+  <% end %>
+</ul>
+
+<% if policy(User).show? %>
+<%= link_to "Add a new language", new_user_user_language_path(@user) %>
+<% end %>

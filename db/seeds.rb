@@ -55,7 +55,7 @@ user_languages = []
   )
   user_language.user = users.sample
   user_language.language = language_objects.sample
-  user_language.save!
+  user_language.save
   user_languages.push(user_language)
 end
 p user_languages

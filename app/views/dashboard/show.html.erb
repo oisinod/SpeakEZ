@@ -6,16 +6,22 @@
   <h2>Incoming requests</h2>
   <% @appts.each do |a| %>
     <% if a.receiver == current_user %>
-      <div class="card">
-        <%= a.asker.first_name %>
-        <%= a.datetime %>
-        <%= a.location %>
-        my language: <%= a.r_language.name %>
-        <%= a.status %>
-        <%# just added accept an decline here to test - will move to details page after %>
-        <div>
-          <%= link_to "Accept", appointment_path(a, q: 1), method: :patch , data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
-          <%= link_to "Decline", appointment_path(a, q: 0), method: :patch , data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
+      <div class="card-requests">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="rounded-lg">
+        <div class="infos">
+          <div class="status"><%= a.status %></div>
+          <h2><%= a.asker.first_name %></h2>
+          <div class="appt-details">
+            <%= a.datetime %>
+            <%= a.location %>
+            my language: <%= a.r_language.name %>
+            <%= a.asker.first_name %>'s language: <%= a.a_language.name %>
+          </div>
+          <%# just added accept an decline here to test - will move to details page after %>
+          <div class="status">
+            <%= link_to "Accept", appointment_path(a, q: 1), method: :patch , data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
+            <%= link_to "Decline", appointment_path(a, q: 0), method: :patch , data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
+          </div>
         </div>
       </div>
     <% end %>
@@ -24,16 +30,25 @@
   <h2>Your requests</h2>
   <% @appts.each do |a| %>
     <% if a.asker == current_user %>
-    <div class="card">
-      <%= a.receiver.first_name %>
-      <%= a.datetime %>
-      <%= a.location %>
-      my language: <%= a.a_language.name %>
-      <%= a.receiver.first_name %>'s language: <%= a.r_language.name %>
-      <%= a.status %>
-      <div>
-        <%= link_to "Edit", edit_appointment_path(a), class: "btn btn-ghost"  %>
-        <%= link_to "Delete", appointment_path(a), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
+    <div class="card-requests">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="rounded-lg">
+      <div class="infos">
+        <div class="status"><%= a.status %></div>
+        <h2><%= a.receiver.first_name %></h2>
+        <div class="appt-details">
+          <%= a.datetime %>
+          <%= a.location %>
+          my language: <%= a.a_language.name %> <br>
+          <%= a.receiver.first_name %>'s language: <%= a.r_language.name %>
+        </div>
+        <div class = "status">
+          <%= link_to  edit_appointment_path(a) do %>
+            <%= icon('fas', 'pen', class: "fa-regular") %>
+          <% end %>
+          <%= link_to appointment_path(a), method: :delete, data: { confirm: "Are you sure?"} do %>
+            <%= icon('fas', 'trash', class: "fa-regular") %>
+          <% end %>
+        </div>
       </div>
     </div>
     <% end %>

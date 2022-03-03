@@ -52,3 +52,55 @@ a.card-product{
 .card-flags{
   display: flex;
 }
+
+
+.card-requests {
+  overflow: hidden;
+  height: 175px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    height: 60%;
+    width: 30%;
+    object-fit: cover;
+    border-radius: 3px;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  .infos{
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .appt-details {
+    font-size: 14px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+
+  .status {
+    align-self: end;
+  }
+
+  .fas {
+    color: $slate-gray;
+    padding: 16px;
+  }
+}

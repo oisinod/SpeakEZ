@@ -1,0 +1,31 @@
+.profile-banner{
+  height: 30vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  .btn-primary{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .btn-back{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: white;
+  }
+}
+
+
+.user-basic-info{
+  h2 {
+    font-size:32px;
+  }
+}
+
+.languages-container {
+  display: flex;
+}

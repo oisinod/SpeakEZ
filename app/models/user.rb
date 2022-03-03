@@ -11,4 +11,5 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :first_name, :last_name, :phone, :nationality, :age, :location, presence: true
   validates :age,  numericality: { only_integer: true }
+  validates :bio, length: {minimum: 5, maximum: 75}, allow_blank: true
 end

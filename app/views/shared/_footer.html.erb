@@ -1,34 +1,24 @@
-<div class="row">
-  <div class="footer">
-    <%# <div class="footer-links"> %>
+<div class="footer">
 
-      <div class="col-4">
-        <div class="icon-box">
-          <%# Link to Messages %>
-          <%= link_to users_path do %>
-          <%= image_tag "message.png", class: "icon" %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="col-4">
-        <div class="icon-box">
-          <%# link to search-function %>
-          <%= link_to users_path do %>
-          <%= image_tag "search.png", class: "icon" %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="col-4">
-        <div class="icon-box">
-        <%# link to Profile from User %>
-          <%= link_to current_user do %>
-          <%= image_tag "profile.png", class: "icon" %>
-          <% end %>
-        </div>
-      </div>
-
-    <%# </div> %>
+  <div class="icon-box">
+    <%# Link to Messages %>
+    <%= link_to users_path do %>
+    <%= image_tag "message.png", class: "icon" %>
+    <% end %>
   </div>
+
+  <div class="icon-box">
+    <%# link to search-function %>
+    <%= link_to users_path do %>
+    <%= image_tag "search.png", class: "icon" %>
+    <% end %>
+  </div>
+
+  <div class="icon-box">
+  <%# link to Profile from User %>
+    <%= link_to user_path(@user) do %>
+    <%= image_tag "profile.png", class: "icon" %>
+    <% end %>
+  </div>
+
 </div>

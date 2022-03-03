@@ -3,10 +3,10 @@
     <h2 class="text-center">Speaks</h2>
     <ul class="list-group">
       <% @speaking.each do |user_language| %>
-      <li class="list-group-item p-0 d-flex align-items-center justify-content-between">
-      <p class="w-75 m-0"><%= user_language.language.name %></p>
-      <p class="w-25 text-center m-0"><%= render "shared/language_level", user_language: user_language %></p>
-      </li>
+        <li class="list-group-item p-0 d-flex align-items-center justify-content-between">
+          <p class="w-75 m-0"><%= user_language.language.name %></p>
+          <p class="w-25 text-center m-0"><%= render "shared/language_level", user_language: user_language %></p>
+        </li>
       <% end %>
     </ul>
   </div>
@@ -15,12 +15,11 @@
     <h2 class="text-center">Learning</h2>
     <ul class="list-group">
       <% @learning.each do |user_language| %>
-      <li class="list-group-item p-0 d-flex align-items-center justify-content-between">
-      <p class="w-75 m-0"><%= user_language.language.name %></p>
-      <p class="w-25 text-center m-0"><%= render "shared/language_level", user_language: user_language %></p>
-      </li>
+        <li class="list-group-item p-0 d-flex align-items-center justify-content-between">
+          <p class="w-75 m-0"><%= user_language.language.name %></p>
+          <p class="w-25 text-center m-0"><%= render "shared/language_level", user_language: user_language %></p>
+        </li>
       <% end %>
     </ul>
   </div>
 </div>
-  </div>

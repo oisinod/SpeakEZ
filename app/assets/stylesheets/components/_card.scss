@@ -5,8 +5,20 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  a{
+    text-decoration: none;
+  }
 }
-
+.card-go{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+a.card-product{
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
 .card-product img {
   height: 60%;
   width: 30%;

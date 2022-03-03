@@ -20,11 +20,21 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
+    @appt = Appointment.find(params[:id])
+    @receiver = @appt.receiver
+    @asker = current_user
+    @r_user_languages = @receiver.user_languages
+    @a_user_languages = @asker.user_languages
+    authorize @appt
   end
 
   def update
     @appt = Appointment.find(params[:id])
-    params[:q].to_i == 1 ? @appt.status = "confirmed" : @appt.status = "declined"
+    if params[:q].nil?
+      @appt.update(appt_params)
+    else
+      params[:q].to_i == 1 ? @appt.status = "confirmed" : @appt.status = "declined"
+    end
     @appt.save!
     redirect_to dashboard_path
     authorize @appt

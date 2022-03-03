@@ -10,6 +10,7 @@
         <%= a.asker.first_name %>
         <%= a.datetime %>
         <%= a.location %>
+        my language: <%= a.r_language.name %>
         <%= a.status %>
         <%# just added accept an decline here to test - will move to details page after %>
         <div>
@@ -27,12 +28,14 @@
       <%= a.receiver.first_name %>
       <%= a.datetime %>
       <%= a.location %>
+      my language: <%= a.a_language.name %>
+      <%= a.receiver.first_name %>'s language: <%= a.r_language.name %>
       <%= a.status %>
-    </div>
       <div>
-        <%# <%= link_to "Edit", appointment_path(a), method: :patch, class: "btn btn-ghost"  %> %>
+        <%= link_to "Edit", edit_appointment_path(a), class: "btn btn-ghost"  %>
         <%= link_to "Delete", appointment_path(a), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
       </div>
+    </div>
     <% end %>
   <% end %>
 </div>

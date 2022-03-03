@@ -1,0 +1,7 @@
+<div class="flag-circle">
+
+  <% user_language.skill_level.times do |rating|  %>
+  <div class="quarter level-<%= rating %>"></div>
+  <% end %>
+	<div class="cutout" style= "background: url('<%= asset_path 'flags/ie.svg' %>')" ></div>
+</div>

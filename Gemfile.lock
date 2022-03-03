@@ -104,6 +104,8 @@ GEM
       activesupport (>= 5.0)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
+    i18n_data (0.16.0)
+      simple_po_parser (~> 1.1)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -202,6 +204,7 @@ GEM
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
+    simple_po_parser (1.1.5)
     spring (4.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -252,6 +255,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   font-awesome-sass
+  i18n_data
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)

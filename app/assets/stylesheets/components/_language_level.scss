@@ -1,39 +1,56 @@
-.arc {
-  border: 3px solid #000;
-  border-radius: 50%;
-  height: 100px;
-  margin: 0;
-  width: 100px;
+/**
+* Quarter Circles
+*/
 
-
+.flag-circle {
+	position:relative;
+	width:50px;
+	height:50px;
+	margin:0 auto;
 }
 
-.level-1{
-  border-top-color: #0000;
-  border-left-color: black;
-  transform: rotate(50deg);
+.quarter {
+	position:absolute;
+	width:50%;
+	height:50%;
+}
+.level-0 {
+  top:0;
+  right:0;
+  border-radius:0 0 0 0 ;
 }
 
-.level-2{
-  border-top-color: #0000;
-  border-left-color: rgba(0, 0, 0, 0);
-  transform: rotate(130deg);
+.level-1 {
+  top:0;
+  right:0;
+  background-color:#A5E6C8;
+  border-radius:0 100% 0 0 ;
 }
-
-.level-3{
-  border-top-color: #0000;
-  border-left-color: black;
-  transform: rotate(50deg);
+.level-2 {
+  bottom:0;
+  right:0;
+  background-color:#A5E6C8;
+  border-radius:0 0 100% 0 ;
 }
-
-.level-4{
-  border-top-color: #0000;
-  border-left-color: black;
-  transform: rotate(50deg);
+.level-3 {
+  bottom:0;
+	left:0;
+	background-color:#A5E6C8;
+	border-radius:0 0 0 100%;
 }
-
-.level-5{
-  border-top-color: rgb(0, 0, 0);
-  border-left-color: rgba(0, 0, 0, 0);
-
+.level-4 {
+  top:0;
+  left:0;
+  background-color: #A5E6C8;
+  border-radius:100% 0 0 0;
 }
+.cutout {
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+	border-radius:50%;
+	pointer-events:none;
+	}

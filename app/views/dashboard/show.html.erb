@@ -10,15 +10,16 @@
         <%= a.asker.first_name %>
         <%= a.datetime %>
         <%= a.location %>
+        <%= a.status %>
         <%# just added accept an decline here to test - will move to details page after %>
         <div>
-          <%= link_to "Accept", appointment_path(request, q: 1), method: :patch , data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
-          <%= link_to "Decline", appointment_path(request, q: 0), method: :patch , data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
+          <%= link_to "Accept", appointment_path(a, q: 1), method: :patch , data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
+          <%= link_to "Decline", appointment_path(a, q: 0), method: :patch , data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
         </div>
       </div>
     <% end %>
   <% end %>
-  
+
   <h2>Your requests</h2>
   <% @appts.each do |a| %>
     <% if a.asker == current_user %>
@@ -26,7 +27,12 @@
       <%= a.receiver.first_name %>
       <%= a.datetime %>
       <%= a.location %>
+      <%= a.status %>
     </div>
+      <div>
+        <%= link_to "Edit", appointment_path(a), method: :patch, class: "btn btn-ghost"  %>
+        <%= link_to "Delete", appointment_path(a), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
+      </div>
     <% end %>
   <% end %>
 </div>

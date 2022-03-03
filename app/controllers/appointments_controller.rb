@@ -23,10 +23,21 @@ class AppointmentsController < ApplicationController
     authorize @appt
   end
 
+  def edit
+    @appt = Appointment.find(params[:id])
+  end
+
   def update
     @appt = Appointment.find(params[:id])
     params[:q].to_i == 1 ? @appt.status = "confirmed" : @appt.status = "declined"
     @appt.save!
+    redirect_to dashboard_path
+    authorize @appt
+  end
+
+  def destroy
+    @appt = Appointment.find(params[:id])
+    @appt.destroy
     redirect_to dashboard_path
     authorize @appt
   end

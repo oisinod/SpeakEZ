@@ -4,10 +4,10 @@
     <%= simple_form_for([@receiver, @appt]) do |f| %>
       <%= f.input :datetime, html5:true, label: "When would you like to meet?" %>
       <%= f.input :location, label: "Where would you like to meet?" %>
-      <%= f.association :asker, collection: @a_languages, label: "Your language" %>
-      <%= f.association :receiver, collection: @r_languages, label: "Language you want to learn from #{@receiver.first_name}" %>
+      <%# <%= f.association :asker, collection: @a_languages, label: "Your language" %> %>
+      <%# <%= f.association :receiver, collection: @r_languages, label: "Language you want to learn from #{@receiver.first_name}" %> %>
       <%= f.submit 'Send request', class: 'btn btn-primary'  %>
     <% end %>
-    
+
   </div>
 </div>

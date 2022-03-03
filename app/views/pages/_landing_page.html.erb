@@ -1,9 +1,43 @@
-<h2>Which of your languages would you like to improve today?</h2>
- <ul>
- <%  user_languages.where(learning:true).each do |user_language| %>
-    <li>
-    <%= link_to user_language.language.name, users_path( language: "#{user_language.language.name}")  %>
+<div class="header">
+  <h1>Speak-EZ</h1>
+  <h2>Today I want to speak:</h2>
+</div>
 
-    </li>
+<div class="languages">
+  <ul>
+    <%  user_languages.where(learning:true).each do |user_language| %>
+      <li>
+        <%= link_to user_language.language.name, users_path( language: "#{user_language.language.name}")  %>
+      </li>
     <% end %>
-</ul>
+  </ul>
+</div>
+
+<div class="search">
+
+  <div class="search-filter"></div>
+
+  <div class="search-bar">
+    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+      <div class="search-form-control form-group">
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+      </div>
+    <% end %>
+
+    <div class="remote">
+      <input class="checkbox" type="checkbox"> I am open to remote
+    </div>
+
+    <div>
+      <button class="button" type="submit">Search</button>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="picture">
+  <%= image_tag("talking.svg") %>
+</div>
+
+<%# Footer %>

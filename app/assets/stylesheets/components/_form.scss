@@ -18,6 +18,12 @@
     justify-content: center;
   }
 
+  .form-radio {
+    .col-form-label {
+      display: none;
+    }
+  }
+
   .btn {
     width: 100%;
   }

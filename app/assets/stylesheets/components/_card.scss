@@ -56,13 +56,14 @@ a.card-product{
 
 .card-requests {
   overflow: hidden;
-  height: 160px;
+  height: 155px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border-radius: 5px;
   margin-bottom: 16px;
+  position: relative;
 
 
   a {
@@ -86,7 +87,7 @@ a.card-product{
     padding: 16px;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 50%;
   }
 
   .appt-details {
@@ -99,11 +100,28 @@ a.card-product{
   }
 
   .status {
-    align-self: end;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    opacity: 0.7;
+
+    &.confirmed {
+      color: $best-green;
+    }
+
+    &.declined {
+      color: #ff3b00;
+    }
+
+
   }
 
   .options {
-    align-self: end;
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    font-size: 30px;
+
   }
 
   .fas {

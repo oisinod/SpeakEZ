@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :user_languages, dependent: :destroy
   has_many :languages, through: :user_languages
   has_many :messages
+  has_one_attached :photo
   validates :username, presence: true, uniqueness: true
   validates :first_name, :last_name, :phone, :nationality, :age, :location, presence: true
   validates :age,  numericality: { only_integer: true }

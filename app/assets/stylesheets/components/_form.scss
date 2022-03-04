@@ -1,0 +1,24 @@
+.form {
+  padding: 18px;
+
+  .form-select {
+    background-color: #FEFEFA;
+    border-radius: 5px;
+    margin-left: 0px !important;
+  }
+
+  .form-control {
+    background-color: #FEFEFA;
+    border-radius: 5px;
+    margin-left: 0px !important;
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

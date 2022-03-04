@@ -4,18 +4,38 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  background-position: center;
 
-  .btn-primary{
+  .profile-banner .btn-primary{
     position: absolute;
     bottom: 15px;
     right: 15px;
+    color:white;
+    background-color: $slate-gray;
+    border: 0px;
+    color: white;
+    padding: 8px 14px 8px 14px;
+    .new-apt-plus{
+      position: absolute;
+      font-size: 14px;
+      right: 3px;
+      top: 2px;
+      color: white;
+
+    }
+    .new-apt-calendar{
+      color: white;
+    }
   }
+
 
   .btn-back{
     position: absolute;
     top: 15px;
     left: 15px;
     color: white;
+    background-color: $slate-gray;
+    border-color: $slate-gray;
   }
 }
 
@@ -28,4 +48,21 @@
 
 .languages-container {
   display: flex;
+}
+
+.new-language-button {
+  background-color: $slate-gray;
+  border-color: $slate-gray;
+}
+
+i.new-language-button{
+  color: white;
+}
+i .new-language-button{
+  color: white;
+  font-size: 24px;
+}
+
+.button a{
+
 }

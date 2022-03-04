@@ -12,10 +12,12 @@ def find_flag(flagcode)
 rescue Sprockets::Rails::Helper::AssetNotFound
   nil
 end
-# creates the seeds of all the languages
+User.destroy_all
+Appointment.destroy_all
+UserLanguage.destroy_all
+Language.destroy_all
 
 languages = ["Afrikaans", "Arabic", "Armenian", "Bengali", "Bulgarian", "Cambodian", "Chinese", "Croatian", "Czech", "Danish", "Dutch", "English", "Estonian", "Finnish", "French", "Georgian", "German", "Greek", "Gujarati", "Hebrew", "Hindi", "Hungarian", "Icelandic", "Indonesian", "Irish", "Italian", "Japanese", "Javanese", "Korean", "Latin", "Latvian", "Lithuanian", "Macedonian", "Malay", "Malayalam", "Maltese", "Maori", "Marathi", "Mongolian", "Nepali", "Norwegian", "Persian", "Polish", "Portuguese", "Punjabi", "Quechua", "Romanian", "Russian", "Samoan", "Serbian", "Slovak", "Slovenian", "Spanish", "Swahili", "Swedish ", "Tamil", "Tatar", "Telugu", "Thai", "Tibetan", "Tonga", "Turkish", "Ukrainian", "Urdu", "Uzbek", "Vietnamese", "Welsh"]
-Language.destroy_all
 language_objects = []
 languages.each do |language|
     flagcode = I18nData.language_code(language)
@@ -26,7 +28,6 @@ languages.each do |language|
 end
 
 users = []
-User.destroy_all
 
 10.times do |time|
   puts time
@@ -38,12 +39,12 @@ User.destroy_all
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     phone: "123456789",
-    bio: nil,
+    bio: "My favourite quote is #{Faker::Quote.jack_handey}. I'm looking for a speakEZ!",
     nationality: "Irish",
     availability: nil,
     age: (1..100).to_a.sample
   )
-  user.save!
+  user.save
   users.push(user)
 end
 
@@ -68,5 +69,5 @@ p user_languages
   )
   appt.asker_language = user_languages.sample
   appt.receiver_language = user_languages.sample
-  appt.save!
+  appt.save
 end

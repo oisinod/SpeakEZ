@@ -8,7 +8,7 @@ class UserLanguagePolicy < ApplicationPolicy
   end
 
   def new?
-    user
+    record
   end
 
   def create?

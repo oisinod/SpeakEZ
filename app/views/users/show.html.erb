@@ -26,8 +26,8 @@
     </p>
   <%= render "users/show/languages" %>
 <% if @user == current_user %>
-  <%= link_to new_user_user_language_path(@user), class: " mt-2" do %>
-    <div class="btn btn-primary new-language-button mt-2"><%= "New language" %></div>
+  <%= link_to new_user_user_language_path(@user) do %>
+    <button class="mt-2 button"><%= "New language" %></div>
   <% end %>
 <% end %>
   <h2 class="pt-3">About</h2>
@@ -35,4 +35,10 @@
   <%= @user.bio %>
   </p>
   </div>
+</div>
+
+
+<div class="logout-button">
+<button class="button">Log out <%= icon('fas', 'sign-out-alt') %></button>
+
 </div>

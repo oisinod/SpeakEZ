@@ -27,7 +27,7 @@ languages.each do |language|
     language_objects.push(language_instance)
 end
 
-users = []
+users = []  
 
 # 10.times do |time|
 #   puts time

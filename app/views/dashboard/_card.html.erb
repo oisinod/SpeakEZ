@@ -1,14 +1,23 @@
+<%# logic which name to display on card %>
+<% if a.asker == current_user  %>
+  <% name = a.receiver.first_name %>
+  <% my_language = a.a_language.name %>
+  <% your_language = a.r_language.name %>
+<% else %>
+  <% name = a.asker.first_name %>
+  <% my_language = a.r_language.name %>
+  <% your_language = a.a_language.name %>
+<% end %>
 <div class="card-requests">
 <%# need to add link to profile pics here!! %>
-
   <img src="https://images.unsplash.com/photo-1530811761207-8d9d22f0a141?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
   <div class="status<%= ' confirmed' if a.status == 'confirmed' %><%= ' declined' if a.status == 'declined' %>"><%= a.status %></div>
   <div class="infos">
-    <h2><%= "#{a.asker.first_name} - #{a.receiver.first_name}" %></h2>
+    <h2><%= name %></h2>
     <div class="appt-details">
       <%= icon('fas', 'calendar', class: "fa-regular") %> <%= a.datetime.strftime("%-d %b %Y at %k:%M") %> <br>
       <%= icon('fas', 'map-marker', class: "fa-regular") %> <%= a.location %> <br>
-      You: <%= a.r_language.name %> <br> <%= a.asker.first_name %>: <%= a.a_language.name %>
+      You: <%= my_language %> <br> <%= name %>: <%= your_language %>
     </div>
     <%# just added accept an decline here to test - will move to details page after %>
   </div>

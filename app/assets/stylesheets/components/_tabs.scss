@@ -1,0 +1,15 @@
+.nav-tabs {
+  .nav-link {
+    color: inherit;
+
+    &.active {
+      background: none;
+      border-bottom: 2px solid $slate-gray;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      font-weight: bold;
+    }
+  }
+
+}

@@ -36,8 +36,8 @@
         <div class="status"><%= a.status %></div>
         <h2><%= a.receiver.first_name %></h2>
         <div class="appt-details">
-          <%= a.datetime.strftime("%-d %b %Y at %k:%M") %> <br>
-          <%= a.location %> <br>
+           <%= icon('fas', 'calendar', class: "fa-regular") %> <%= a.datetime.strftime("%-d %b %Y at %k:%M") %> <br>
+           <%= icon('fas', 'map-marker', class: "fa-regular") %> <%= a.location %> <br>
           You: <%= a.a_language.name %> - <%= a.receiver.first_name %> <%= a.r_language.name %>
         </div>
         <div class = "status">

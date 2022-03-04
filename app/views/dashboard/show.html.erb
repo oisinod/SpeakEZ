@@ -29,7 +29,7 @@
     <div class="tab-pane fade" id="nav-outgoing" role="tabpanel" aria-labelledby="nav-outgoing-tab">
       <%# display outgoing pending requests %>
       <% @appts.each do |a| %>
-        <% if a.asker == current_user %>
+        <% if a.asker == current_user && a.status != "confirmed"%>
           <%= render "card", a: a %>
         <% end %>
       <% end %>

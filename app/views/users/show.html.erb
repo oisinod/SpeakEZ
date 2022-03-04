@@ -35,11 +35,9 @@
   <%= @user.bio %>
   </p>
   </div>
-</div>
-
-
 <div class="logout-button">
 <%= link_to destroy_user_session_path, method: :delete do %>
   <button class="button">Log out <%= icon('fas', 'sign-out-alt') %></button>
 <% end %>
+</div>
 </div>

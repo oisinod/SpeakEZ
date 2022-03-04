@@ -10,5 +10,9 @@
 // }
 
 body {
+  height: 100%;
   background: linear-gradient(180deg, rgba(206, 237, 219, 0) 0%, #CEEDDB 100%);
+  background-size:100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

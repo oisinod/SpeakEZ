@@ -1,41 +1,31 @@
-<div class="container">
-  <h1>Your Dashboard</h1>
-  <h2>Upcoming meetings:</h2>
+<%# added top margin manually, should align with overall layout %>
 
+<div class="container mt-4">
+  <h1>Your Dashboard</h1>
+  <h2>Upcoming SpeakEZs:</h2>
+  <%# display confirmed meetings %>
+  <% @appts.each do |a| %>
+    <% if a.status == "confirmed" %>
+      <%= render "card", a: a %>
+    <% end %>
+  <% end %>
 
   <h2>Incoming requests</h2>
+  <%# display incoming pending requests %>
   <% @appts.each do |a| %>
-    <% if a.receiver == current_user %>
-      <div class="card">
-        <%= a.asker.first_name %>
-        <%= a.datetime %>
-        <%= a.location %>
-        my language: <%= a.r_language.name %>
-        <%= a.status %>
-        <%# just added accept an decline here to test - will move to details page after %>
-        <div>
-          <%= link_to "Accept", appointment_path(a, q: 1), method: :patch , data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
-          <%= link_to "Decline", appointment_path(a, q: 0), method: :patch , data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
-        </div>
-      </div>
+    <% if a.receiver == current_user && a.status == "pending" %>
+      <%= render "card", a: a %>
     <% end %>
   <% end %>
 
   <h2>Your requests</h2>
+  <%# display outgoing pending requests %>
   <% @appts.each do |a| %>
     <% if a.asker == current_user %>
-    <div class="card">
-      <%= a.receiver.first_name %>
-      <%= a.datetime %>
-      <%= a.location %>
-      my language: <%= a.a_language.name %>
-      <%= a.receiver.first_name %>'s language: <%= a.r_language.name %>
-      <%= a.status %>
-      <div>
-        <%= link_to "Edit", edit_appointment_path(a), class: "btn btn-ghost"  %>
-        <%= link_to "Delete", appointment_path(a), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-ghost"  %>
-      </div>
-    </div>
+      <%= render "card", a: a %>
     <% end %>
   <% end %>
 </div>
+
+
+<%# Maybe link to past/declined meetings here? %>

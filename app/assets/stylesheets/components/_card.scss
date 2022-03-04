@@ -52,3 +52,80 @@ a.card-product{
 .card-flags{
   display: flex;
 }
+
+
+.card-requests {
+  overflow: hidden;
+  height: 155px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  position: relative;
+
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    height: 100%;
+    width: 30%;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  .infos{
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .appt-details {
+    font-size: 16px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+
+  }
+
+  .status {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    opacity: 0.7;
+
+    &.confirmed {
+      color: $best-green;
+    }
+
+    &.declined {
+      color: #ff3b00;
+    }
+
+
+  }
+
+  .options {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    font-size: 30px;
+
+  }
+
+  .fas {
+    color: $slate-gray ;
+    padding-right: 8px;
+  }
+}

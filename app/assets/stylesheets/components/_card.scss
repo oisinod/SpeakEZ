@@ -61,6 +61,7 @@ a.card-product{
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 5px;
 
 
   a {
@@ -68,10 +69,9 @@ a.card-product{
   }
 
   img {
-    height: 60%;
+    height: 100%;
     width: 30%;
     object-fit: cover;
-    border-radius: 3px;
   }
 
   h2 {
@@ -82,17 +82,19 @@ a.card-product{
   }
 
   .infos{
-    padding: 16px;
+    padding: 18px;
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 
   .appt-details {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.4;
     opacity: .7;
     margin-bottom: 0;
     margin-top: 8px;
+
   }
 
   .status {

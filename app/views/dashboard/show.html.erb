@@ -36,10 +36,9 @@
         <div class="status"><%= a.status %></div>
         <h2><%= a.receiver.first_name %></h2>
         <div class="appt-details">
-          <%= a.datetime %>
-          <%= a.location %>
-          my language: <%= a.a_language.name %> <br>
-          <%= a.receiver.first_name %>'s language: <%= a.r_language.name %>
+          <%= a.datetime.strftime("%-d %b %Y at %k:%M") %> <br>
+          <%= a.location %> <br>
+          You: <%= a.a_language.name %> - <%= a.receiver.first_name %> <%= a.r_language.name %>
         </div>
         <div class = "status">
           <%= link_to  edit_appointment_path(a) do %>

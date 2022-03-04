@@ -13,11 +13,10 @@
   </head>
 
   <body>
-    <div class="background">
+
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
-      <%= yield %>
-    </div>
+      <div class="content" data-controller="blurry-navbar"><%= yield %></div>
       <%= render 'shared/footer' %>
   </body>
 </html>

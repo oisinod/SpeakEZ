@@ -10,6 +10,6 @@ class UserPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    user
   end
 end

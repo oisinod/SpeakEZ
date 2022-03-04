@@ -4,11 +4,15 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  background-position: center;
 
-  .btn-primary{
+  .profile-banner .btn-primary{
     position: absolute;
     bottom: 15px;
     right: 15px;
+    color:white;
+    background-color: $purple;
+    border: 0px;
   }
 
   .btn-back{

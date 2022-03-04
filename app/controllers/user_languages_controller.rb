@@ -1,6 +1,7 @@
 class UserLanguagesController < ApplicationController
   def new
     @user_language = UserLanguage.new
+    @user_language.user = User.find(params[:user_id])
     authorize @user_language
   end
 

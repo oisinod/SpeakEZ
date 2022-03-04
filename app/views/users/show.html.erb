@@ -18,8 +18,8 @@
       <%= @user.availability %>
     </p>
   <%= render "users/show/languages" %>
-<% if policy(User).show? %>
-<%= link_to "Add a new language", new_user_user_language_path(@user) %>
+<% if @user == current_user %>
+  <%= link_to "Add a new language", new_user_user_language_path(@user), class: "btn btn-primary" %>
 <% end %>
   <h2 class="pt-3">About</h2>
   <p>

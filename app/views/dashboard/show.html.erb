@@ -1,7 +1,12 @@
 <div class="container">
   <h1>Your Dashboard</h1>
-  <h2>Upcoming meetings:</h2>
+  <h2>Upcoming SpeakEZs:</h2>
   <%# display confirmed meetings %>
+  <% @appts.each do |a| %>
+    <% if a.status == "confirmed" %>
+      <%= render "card", a: a %>
+    <% end %>
+  <% end %>
 
 
   <h2>Incoming requests</h2>

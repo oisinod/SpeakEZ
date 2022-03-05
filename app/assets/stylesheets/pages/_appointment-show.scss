@@ -1,0 +1,28 @@
+.headline {
+  padding-bottom: 16px;
+  display: flex;
+  border-bottom: 1px solid #dee2e6;
+
+  .headline-text {
+    padding-left: 16px;
+    align-self: center;
+  }
+}
+
+.appt-languages {
+  display: flex;
+  border-bottom: 1px solid #dee2e6;
+  justify-content: space-around;
+
+  .divider {
+    width: 1px;
+    background-color: #dee2e6;
+  }
+
+  .language-details {
+    padding: 16px;
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: center;
+  }
+}

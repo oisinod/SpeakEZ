@@ -2,6 +2,17 @@ class AppointmentsController < ApplicationController
 
   def show
     @appt = Appointment.find(params[:id])
+    @user = current_user
+    if @user == @appt.asker
+      @partner = @appt.receiver
+      @user_language = @appt.a_language.name
+      @partner_language = @appt.r_language.name
+    else
+      @partner = @appt.asker
+      @user_language = @appt.r_language.name
+      @partner_language = @appt.a_language.name
+    end
+
     authorize @appt
   end
 

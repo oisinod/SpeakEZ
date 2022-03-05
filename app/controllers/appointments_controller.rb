@@ -1,5 +1,10 @@
 class AppointmentsController < ApplicationController
 
+  def show
+    @appt = Appointment.find(params[:id])
+    authorize @appt
+  end
+
   def new
     @receiver = User.find(params[:user_id])
     @asker = current_user

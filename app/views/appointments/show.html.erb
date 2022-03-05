@@ -1,0 +1,38 @@
+<div class="container mt-4 px-3">
+  <div class="back-icon">
+    <%= link_to :back do %>
+      <%= icon('far', 'arrow-alt-circle-left' ) %>
+    <% end %>
+  </div>
+
+  <div class="headline">
+    <%= link_to user_path(@partner) do %>
+      <img src="<%= @partner.photo.key ? (cloudinary_url @partner.photo.key) : "https://images.unsplash.com/photo-1643725173053-ed68676f1878?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" %>" class="img-appt"/>
+    <% end %>
+    <div class="headline-text">
+      <%= render 'show_headline_text', partner: @partner, appt: @appt %>
+    </div>
+  </div>
+  <%# Need to replace language name with flag thingys %>
+  <div class="appt-languages">
+    <div class="language-details">
+      You: <%= @user_language %>
+    </div>
+    <div class="divider"></div>
+    <div class="language-details">
+      <%= @partner.first_name %>: <%= @partner_language %>
+    </div>
+  </div>
+  <div class="appt-datetime">
+    <div class="icons">
+      <%= icon('far', 'calendar-check', class: "fa") %> <br>
+      <%= icon('fas', 'map-marker', class: "fa") %> <br>
+    </div>
+    <div class="text">
+      <%= @appt.datetime.strftime("%-d %b %Y at %k:%M") %><br>
+      <%= @appt.location %>
+    </div>
+  </div>
+  <div class="appt-options">
+    <%= render 'show_options', partner: @partner, appt: @appt %>
+</div>

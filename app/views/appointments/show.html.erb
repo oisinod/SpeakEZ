@@ -27,7 +27,6 @@
     <div class="icons">
       <%= icon('far', 'calendar-check', class: "fa") %> <br>
       <%= icon('fas', 'map-marker', class: "fa") %> <br>
-
     </div>
     <div class="text">
       <%= @appt.datetime.strftime("%-d %b %Y at %k:%M") %><br>
@@ -35,18 +34,5 @@
     </div>
   </div>
   <div class="appt-options">
-    <div class="message">
-      Message <%= @partner.first_name %> <%= icon('far', 'comment', class: "fa") %>
-    </div>
-    <%= link_to edit_appointment_path(@appt) do %>
-      <div class="edit">
-        Edit SpeakEZ <%= icon('far', 'edit', class: "fa") %>
-      </div>
-    <% end %>
-    <%= link_to appointment_path(@appt), method: :delete, data: { confirm: "Are you sure?"} do %>
-      <div class="delete">
-        Cancel SpeakEZ <%= icon('far', 'trash-alt', class: "fa") %>
-      </div>
-    <% end %>
-  </div>
+    <%= render 'show_options', partner: @partner, appt: @appt %>
 </div>

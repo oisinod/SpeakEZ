@@ -73,5 +73,31 @@
     margin-right: 12px ;
   }
 
+}
+
+.accept-decline {
+
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .far {
+    font-size: 60px;
+    margin-right: 12px ;
+    font-weight: 100;
+    opacity: 0.7;
+
+    &.fa-check-circle {
+      color: $best-green;
+    }
+    &.fa-times-circle {
+      color: #ff3b00;
+    }
+  }
 
 }

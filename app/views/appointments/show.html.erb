@@ -10,8 +10,7 @@
       <img src="<%= @partner.photo.key ? (cloudinary_url @partner.photo.key) : "https://images.unsplash.com/photo-1643725173053-ed68676f1878?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" %>" class="img-appt"/>
     <% end %>
     <div class="headline-text">
-      <h2>You're meeting <%= @partner.first_name %></h2>
-      <div class="status<%= ' confirmed' if @appt.status == 'confirmed' %><%= ' declined' if @appt.status == 'declined' %>"><%= @appt.status %></div>
+      <%= render 'show_headline_text', partner: @partner, appt: @appt %>
     </div>
   </div>
   <%# Need to replace language name with flag thingys %>

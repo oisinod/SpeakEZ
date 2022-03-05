@@ -26,3 +26,42 @@
     text-align: center;
   }
 }
+
+.appt-datetime {
+  display: flex;
+  padding: 16px;
+
+  .icons {
+    color: $slate-gray;
+    opacity: 0.7;
+  }
+
+  .text {
+    padding-left: 16px;
+  }
+}
+
+.appt-options {
+  border-top: 1px solid #dee2e6;
+
+
+  div {
+    border-bottom: 1px solid #dee2e6;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .far {
+    color: $slate-gray;
+    font-size: larger;
+    margin-right: 12px ;
+  }
+
+
+}

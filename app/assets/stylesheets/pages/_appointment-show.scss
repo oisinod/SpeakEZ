@@ -1,3 +1,13 @@
+.back-icon {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  margin-left: 8px;
+  .far {
+    color: $slate-gray;
+    font-size: larger;
+  }
+}
+
 .headline {
   padding-bottom: 16px;
   display: flex;
@@ -29,7 +39,7 @@
 
 .appt-datetime {
   display: flex;
-  padding: 16px;
+  padding: 14px;
 
   .icons {
     color: $slate-gray;
@@ -37,7 +47,7 @@
   }
 
   .text {
-    padding-left: 16px;
+    padding-left: 14px;
   }
 }
 
@@ -47,7 +57,7 @@
 
   div {
     border-bottom: 1px solid #dee2e6;
-    padding: 16px;
+    padding: 14px;
     display: flex;
     justify-content: space-between;
   }

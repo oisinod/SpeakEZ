@@ -1,4 +1,9 @@
-<div class="container mt-4">
+<div class="container mt-4 px-3">
+  <div class="back-icon">
+    <%= link_to :back do %>
+      <%= icon('far', 'arrow-alt-circle-left' ) %>
+    <% end %>
+  </div>
 
   <div class="headline">
     <%= link_to user_path(@partner) do %>

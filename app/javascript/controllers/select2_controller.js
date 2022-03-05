@@ -8,7 +8,8 @@ const selectbox = document.getElementById("selectbox")
     { tags: true,
       theme: 'classic',
       width:'element',
-      templateResult: formatFlag
+      templateResult: formatFlag,
+      templateSelection: formatFlag
       }
       );
 

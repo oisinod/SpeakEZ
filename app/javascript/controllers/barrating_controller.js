@@ -6,9 +6,8 @@ export default class extends Controller {
 
   connect() {
     $(function() {
-      $(this.element).barrating({
-        theme: 'css-stars',
-        showSelectedRating: false
+      $('#user_language_skill_level').barrating({
+        theme: 'bars-movie',
     });
     });
   }

@@ -1,0 +1,44 @@
+<div class="profile-banner" style= "background-image:url();" >
+
+    <div style="background-image: url(<%= user.photo.key ? (cloudinary_url user.photo.key) : "https://images.unsplash.com/photo-1643725173053-ed68676f1878?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" %>);" class="profile-banner">
+
+  <%= link_to new_user_appointment_path(user) do %>
+    <div class="btn btn-primary">
+    <%= icon('fas', 'calendar-alt', class: "fa-2x new-apt-calendar") %>
+    <%= icon('fas', 'plus', class: "new-apt-plus") %>
+  <% end %>
+  </div>
+  <%= link_to :back, class:"btn btn-danger btn-back" do %>
+  <%= icon('far', 'arrow-alt-circle-left' ) %>
+  <% end %>
+</div>
+
+
+<div class="container pt-3">
+  <div class="user-basic-info">
+    <h2 class= "" >
+      <%= user.username %>
+    </h2>
+    <h3>
+      <%= "#{user.age} - #{user.location.capitalize}" %>
+    </h3>
+    <p>
+      <%= user.availability %>
+    </p>
+  <%= render "users/show/languages" %>
+<% if user == current_user %>
+  <%= link_to new_user_user_language_path(user), data: {turbolinks: "false"} do %>
+    <button class="mt-2 button"><%= "New language" %></div>
+  <% end %>
+<% end %>
+  <h2 class="pt-3">About</h2>
+  <p>
+  <%= user.bio %>
+  </p>
+  </div>
+<div class="logout-button">
+<%= link_to destroy_user_session_path, method: :delete do %>
+  <button class="button">Log out <%= icon('fas', 'sign-out-alt') %></button>
+<% end %>
+</div>
+</div>

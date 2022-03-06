@@ -5,6 +5,8 @@ import "select2";
 const selectbox = document.getElementById("selectbox")
 const searchbox = document.querySelector(".select2-search__field")
 
+
+document.addEventListener("DOMContentLoaded", function() {
   $(selectbox).select2(
     { tags: false,
       theme: 'classic',
@@ -23,3 +25,4 @@ const searchbox = document.querySelector(".select2-search__field")
         );
         return $state;
       };
+});

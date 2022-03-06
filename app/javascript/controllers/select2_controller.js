@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
       );
 
       function formatFlag (state) {
-        console.log(state.text)
         var baseUrl = "/assets/flags";
         const split = state.text.split(" ")
         var $state = $(

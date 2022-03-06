@@ -18,4 +18,10 @@ class Appointment < ApplicationRecord
   def r_language
     receiver_language.language
   end
+
+  def other_user(current_user)
+    return asker if receiver == current_user
+
+    return receiver if asker == current_user
+  end
 end

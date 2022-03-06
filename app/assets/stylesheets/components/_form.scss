@@ -16,6 +16,7 @@
   .form-actions {
     display: flex;
     justify-content: center;
+    margin-top: 50px;
   }
 
   .form-radio {
@@ -27,4 +28,21 @@
   .btn {
     width: 100%;
   }
+}
+
+.br-theme-bars-movie .br-widget a.br-selected {
+  background-color: $best-green;
+}
+.br-widget a{
+  background-color: $best-green;
+}
+
+.br-theme-bars-movie .br-widget a {
+  height: 15px;
+  background-color: $light-green;
+}
+
+.br-theme-bars-movie .br-widget .br-current-rating {
+  width: 310px;
+  color: black;
 }

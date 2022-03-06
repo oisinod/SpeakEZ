@@ -63,6 +63,14 @@ i .new-language-button{
   font-size: 24px;
 }
 
+.my-profile {
+  .fas {
+    color: $slate-gray;
+    font-size: larger;
+    margin-right: 12px ;
+  }
+}
+
 .language-box {
   border-bottom: 1px solid #dee2e6;
 }
@@ -138,12 +146,11 @@ i .new-language-button{
   }
 
 }
-.fas {
-  color: $slate-gray;
-  font-size: larger;
-  margin-right: 12px ;
-}
 
 .bio {
   padding: 5px;
+}
+
+.logout {
+  padding: 10px;
 }

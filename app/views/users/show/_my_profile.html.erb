@@ -1,4 +1,4 @@
-<div class="container mt-4 px-3">
+<div class="container my-profile mt-4 px-3">
   <div class="back-icon">
     <%= link_to :back do %>
       <%= icon('far', 'arrow-alt-circle-left' ) %>
@@ -10,7 +10,7 @@
     <div class="headline-text">
     <h2><%= user.first_name %> <%= user.last_name %></h2>
     Username: <%= user.username %><br>
-    <%= user.age %> years, from: <%= user.location %> <br>
+    <%= user.age %> years from: <%= user.location %> <br>
     </div>
   </div>
   <div class="profile-header">
@@ -54,5 +54,15 @@
   </div>
   <div class="bio">
     <p><%= user.bio %></p>
+  </div>
+  <div class="appt-options">
+    <div class="edit-profile">
+      Edit profile <%= icon('fas', 'edit', class: "fa") %>
+    </div>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <div class="logout">
+        Logout<%= icon('fas', 'sign-out-alt', class: "fa") %>
+      </div>
+    <% end %>
   </div>
 </div>

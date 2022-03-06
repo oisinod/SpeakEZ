@@ -1,2 +1,6 @@
-<%# <%= render "users/show/public_profile", user: @user %> %>
-<%= render "users/show/my_profile", user: @user %>
+<%# made a new profile page - for now as 'my profile' %>
+<% if @user == current_user %>
+  <%= render "users/show/my_profile", user: @user %>
+<% else %>
+  <%= render "users/show/public_profile", user: @user %>
+<% end %>

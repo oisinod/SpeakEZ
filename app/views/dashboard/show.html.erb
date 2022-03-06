@@ -7,6 +7,7 @@
       <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">SpeakEZs</button>
       <button class="nav-link" id="nav-incoming-tab" data-bs-toggle="tab" data-bs-target="#nav-incoming" type="button" role="tab" aria-controls="nav-incoming" aria-selected="false">Incoming</button>
       <button class="nav-link" id="nav-outgoing-tab" data-bs-toggle="tab" data-bs-target="#nav-outgoing" type="button" role="tab" aria-controls="nav-outgoing" aria-selected="false">Outgoing</button>
+      <button class="nav-link" id="nav-calendar-tab" data-bs-toggle="tab" data-bs-target="#nav-calendar" type="button" role="tab" aria-controls="nav-calendar" aria-selected="false">📅</button>
     </div>
   </nav>
   <div class="tab-content" id="nav-tabContent">
@@ -33,6 +34,10 @@
           <%= render "card", a: a %>
         <% end %>
       <% end %>
+    </div>
+    <div class="tab-pane fade" id="nav-calendar" role="tabpanel" aria-labelledby="nav-calendar">
+      <%# display outgoing pending requests %>
+      <%= render "calendar" %>
     </div>
   </div>
 </div>

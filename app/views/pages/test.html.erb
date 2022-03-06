@@ -1,11 +1,11 @@
 
 <%= month_calendar(events: @my_appts) do |date, meetings| %>
-  <%= date %>
+  <%= date.day %>
       <%# <% raise %>
 
   <% meetings.each do |meeting| %>
     <div class="meeting">
-      <p>Meeting with <%= meeting.other_user(current_user).username %></p>
+      <p><%= meeting.other_user(current_user).username %></p>
     </div>
   <% end %>
 <% end %>

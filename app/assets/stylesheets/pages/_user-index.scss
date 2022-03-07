@@ -1,0 +1,11 @@
+.search-form-control{
+  display: flex;
+  justify-content: space-between;
+  .select.required.search_user_language{
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+.search{
+  margin-bottom: 0%;
+}

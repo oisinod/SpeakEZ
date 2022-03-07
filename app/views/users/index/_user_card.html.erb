@@ -1,7 +1,7 @@
-<%= link_to user_path(user), class:"card-product d-flex justify-content-evenly mt-3" do  %>
+<%= link_to user_path(user), class:"card-product d-flex justify-content-evenly" do  %>
   <img src="<%= user.photo.key ? (cloudinary_url user.photo.key) : "https://images.unsplash.com/photo-1643725173053-ed68676f1878?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" %>" class="rounded-lg"/>
   <div class="card-product-infos d-flex flex-column justify-content-around align-items-center w-50 ">
-    <h2 class="pt-3"><%= user.username %></h2>
+    <h2 class="pt-3 "><%= user.username %></h2>
     <p class="text-wrap text-break"><%= user.bio.truncate(75) if user.bio %></p>
     <div class="card-languages d-flex justify-content-between w-100">
 

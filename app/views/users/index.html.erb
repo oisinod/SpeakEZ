@@ -1,11 +1,9 @@
-
-
 <div class="container mt-4 p-3">
   <div class="user-index-search">
     <%= simple_form_for :search, url: users_path, method: :get do |f| %>
       <div class="search-form-control form-group">
-        <%= f.input :user_language, label:false,include_blank: false, collection: @user.user_languages.map {|ul|"#{ul.language.flagcode} #{ul.language.name}" }, wrapper_html:{id:"language-dropdown-index"},data:{select2_options_value: {tags: true}} %>
-        <%= f.input :distance, label:false, collection: ["1km", "5km", "10km", "15km", "20km"] %>
+        <%= f.input :user_language, label:false,include_blank: true, collection: @user.user_languages.map {|ul|"#{ul.language.flagcode} #{ul.language.name}" }, wrapper_html:{id:"language-dropdown-index"},data:{select2_options_value: {tags: true}} %>
+        <%= f.input :distance, label:false, collection: ["1km", "5km", "10km", "15km", "20km"], prompt: "Distance" %>
         <button name="button" type="submit" class="btn btn-flat search-submit-button" data-turbolinks="">
           <div class="button"><i class="fas fa-search"></i></div>
         </button>

@@ -5,14 +5,20 @@ class AppointmentsController < ApplicationController
     @user = current_user
     if @user == @appt.asker
       @partner = @appt.receiver
-      @user_language = @appt.a_language.name
-      @partner_language = @appt.r_language.name
+      @user_language = @appt.asker_language
+      @partner_language = @appt.receiver_language
     else
       @partner = @appt.asker
-      @user_language = @appt.r_language.name
-      @partner_language = @appt.a_language.name
+      @user_language = @appt.receiver_language
+      @partner_language = @appt.asker_language
     end
+    @marker =
+      {
+        lat: @appt.latitude,
+        lng: @appt.longitude
+      }
 
+    @markers = [@marker]
     authorize @appt
   end
 

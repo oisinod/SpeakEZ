@@ -12,10 +12,11 @@ def find_flag(flagcode)
 rescue Sprockets::Rails::Helper::AssetNotFound
   nil
 end
-#  User.destroy_all
-#  Appointment.destroy_all
-UserLanguage.destroy_all
+
+Appointment.destroy_all
+User.destroy_all
 Language.destroy_all
+UserLanguage.destroy_all
 
 languages = ["Afrikaans", "Arabic", "Armenian", "Bengali", "Bulgarian", "Cambodian", "Chinese", "Croatian", "Czech", "Danish", "Dutch", "English", "Estonian", "Finnish", "French", "Georgian", "German", "Greek", "Gujarati", "Hebrew", "Hindi", "Hungarian", "Icelandic", "Indonesian", "Italian", "Japanese", "Javanese", "Korean", "Latin", "Latvian", "Lithuanian", "Macedonian", "Malay", "Malayalam", "Maltese", "Maori", "Marathi", "Mongolian", "Nepali", "Norwegian", "Persian", "Polish", "Portuguese", "Punjabi", "Quechua", "Romanian", "Russian", "Samoan", "Serbian", "Slovak", "Slovenian", "Spanish", "Swahili", "Swedish ", "Tamil", "Tatar", "Telugu", "Thai", "Tibetan", "Tonga", "Turkish", "Ukrainian", "Urdu", "Uzbek", "Vietnamese", "Welsh"]
 language_objects = []
@@ -23,8 +24,10 @@ languages.each do |language|
     flagcode = I18nData.language_code(language)
     flagcode = flagcode.downcase unless flagcode.nil?
     puts "#{language} - #{flagcode}"
-    language_instance = Language.create(name: language, flagcode: flagcode) if find_flag(flagcode)
-    language_objects.push(language_instance)
+    if find_flag(flagcode)
+      language_instance = Language.create!(name: language, flagcode: flagcode)
+      language_objects.push(language_instance)
+    end
 end
 Language.create(name:"Irish", flagcode:"ie")
 users = []
@@ -48,26 +51,26 @@ users = []
   users.push(user)
 end
 
-# user_languages = []
-# 10.times do |t|
-#   puts t
-#   user_language = UserLanguage.new(
-#     skill_level: (1..5).to_a.sample
-#   )
-#   user_language.user = users.sample
-#   user_language.language = language_objects.sample
-#   user_language.save
-#   user_languages.push(user_language)
-# end
-# p user_languages
+user_languages = []
+10.times do |t|
+  puts t
+  user_language = UserLanguage.new(
+    skill_level: (1..5).to_a.sample
+  )
+  user_language.user = users.sample
+  user_language.language = language_objects.sample
+  user_language.save!
+  user_languages.push(user_language)
+end
+p user_languages
 
-# 3.times do |t|
-#   puts t
-#   appt = Appointment.new(
-#     location: "Cologne",
-#     datetime: DateTime.strptime("09/01/2009 17:00", "%m/%d/%Y %H:%M")
-#   )
-#   appt.asker_language = user_languages.sample
-#   appt.receiver_language = user_languages.sample
-#   appt.save
-# end
+3.times do |t|
+  puts t
+  appt = Appointment.new(
+    location: "Cologne",
+    datetime: DateTime.strptime("09/01/2009 17:00", "%m/%d/%Y %H:%M")
+  )
+  appt.asker_language = user_languages.sample
+  appt.receiver_language = user_languages.sample
+  appt.save
+end

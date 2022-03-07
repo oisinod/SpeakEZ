@@ -6,7 +6,7 @@
 
     <% meetings.each do |meeting| %>
       <div class="meeting">
-        <p><%= meeting.other_user(current_user).username %></p>
+        <p><%= meeting.other_user_language(current_user).name %></p>
       </div>
     <% end %>
   <% end %>

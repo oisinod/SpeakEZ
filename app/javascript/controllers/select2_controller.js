@@ -8,14 +8,20 @@ const searchbox = document.querySelector(".select2-search__field")
 
   $(selectbox).select2(
     { tags: false,
-      theme: 'classic',
+      // theme: 'classic',
+      placeholder: 'Choose a language...',
       width:'element',
+      // allowClear: true,
       templateResult: formatFlag,
       templateSelection: formatFlag
       }
       );
 
       function formatFlag (state) {
+        if (state.id === '') {
+          return 'Choose a language...';
+        }
+
         var baseUrl = "/assets/flags";
         const split = state.text.split(" ")
         var $state = $(

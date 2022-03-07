@@ -4,7 +4,7 @@
       <h2>Add a new lanuage to your profile</h2>
       <%= simple_form_for([current_user, @user_language]) do |f| %>
         <div class="form-inputs">
-          <%= f.association :language, label_method: :form_input, label: "Choose a language", value_method: :id, include_blank: false, input_html: { id:"selectbox", data: {controller: "select2", flag:"flag",  select2_options_value: {tags: true}, select2_target: "flag"} } %>
+          <%= f.association :language, label_method: :form_input, label: "Choose a language", value_method: :id, include_blank: true, input_html: { id:"selectbox", data: {controller: "select2", flag:"flag",  select2_options_value: {tags: true}, select2_target: "flag"} } %>
         </div>
         <div class="form-radio">
           <%= f.input :learning, as: :radio_buttons, collection: [[true, 'I want to learn this language'], [false, 'I speak this language']], label_method: :second, value_method: :first, required: true %>

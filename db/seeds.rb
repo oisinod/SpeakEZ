@@ -12,8 +12,9 @@ def find_flag(flagcode)
 rescue Sprockets::Rails::Helper::AssetNotFound
   nil
 end
-#  User.destroy_all
-#  Appointment.destroy_all
+
+User.destroy_all
+Appointment.destroy_all
 UserLanguage.destroy_all
 Language.destroy_all
 

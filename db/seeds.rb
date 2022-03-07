@@ -29,24 +29,24 @@ end
 Language.create(name:"Irish", flagcode:"ie")
 users = []
 
-# 10.times do |time|
-#   puts time
-#   user = User.new(
-#     email: "test@#{time}.com",
-#     password: 123_456,
-#     username: "#{Faker::Books::CultureSeries.planet}#{(1..100).to_a.sample}",
-#     location: "cologne",
-#     first_name: Faker::Name.first_name,
-#     last_name: Faker::Name.last_name,
-#     phone: "123456789",
-#     bio: "My favourite quote is #{Faker::Quote.jack_handey}. I'm looking for a speakEZ!",
-#     nationality: "Irish",
-#     availability: nil,
-#     age: (1..100).to_a.sample
-#   )
-#   user.save
-#   users.push(user)
-# end
+10.times do |time|
+  puts time
+  user = User.new(
+    email: "test@#{time}.com",
+    password: 123_456,
+    username: "#{Faker::Books::CultureSeries.planet}#{(1..100).to_a.sample}",
+    location: "cologne",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    phone: "123456789",
+    bio: "My favourite quote is #{Faker::Quote.jack_handey}. I'm looking for a speakEZ!",
+    nationality: "Irish",
+    availability: nil,
+    age: (1..100).to_a.sample
+  )
+  user.save
+  users.push(user)
+end
 
 # user_languages = []
 # 10.times do |t|

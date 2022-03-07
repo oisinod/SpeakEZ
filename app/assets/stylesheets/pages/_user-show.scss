@@ -15,17 +15,6 @@
     border: 0px;
     color: white;
     padding: 8px 14px 8px 14px;
-    .new-apt-plus{
-      position: absolute;
-      font-size: 14px;
-      right: 3px;
-      top: 2px;
-      color: white;
-
-    }
-    .new-apt-calendar{
-      color: white;
-    }
   }
 
 
@@ -64,10 +53,47 @@ i .new-language-button{
 }
 
 .my-profile {
-  .fas {
+  .fa {
     color: $slate-gray;
-    font-size: larger;
     margin-right: 12px ;
+  }
+}
+
+.headline-text {
+  h2 {
+    margin-bottom: 0;
+  }
+}
+.profile-actions {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #dee2e6;
+
+  .make-appointment {
+    position: relative;
+  }
+
+  .new-apt-plus{
+    position: absolute;
+    font-size: 14px;
+    right: 4px;
+    top: 7px;
+    color: $slate-gray;
+  }
+  .new-apt-calendar{
+
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .fa {
+    color: $slate-gray;
+    font-size: 33px;
+    padding: 13px;
+    margin: 0;
   }
 }
 
@@ -139,10 +165,6 @@ i .new-language-button{
     justify-content: space-between;
 
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
 
   h2 {
     font-size: 18px;

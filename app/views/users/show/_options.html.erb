@@ -1,0 +1,10 @@
+<div class="appt-options">
+  <div class="edit-profile">
+    Edit profile <%= icon('fas', 'edit', class: "fa") %>
+  </div>
+  <%= link_to destroy_user_session_path, method: :delete do %>
+    <div class="logout">
+      Logout<%= icon('fas', 'sign-out-alt', class: "fa") %>
+    </div>
+  <% end %>
+</div>

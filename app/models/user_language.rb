@@ -8,8 +8,4 @@ class UserLanguage < ApplicationRecord
   def language_name
     language.name
   end
-
-  def user_language_search
-    "Hey"
-  end
 end

@@ -14,3 +14,20 @@
 .select.required.search-distance{
   padding: 0px 15px;
 }
+.form-label.select.required{
+  display: inline-flex;
+}
+
+.form-select{
+  padding:0px;
+  option{
+    font-size: 16px;
+  }
+}
+.select2-container{
+  margin-top: 15px;
+  margin-right: 5px;
+}
+.btn.btn-flat.search-submit-button{
+  margin-top: 10px;
+}

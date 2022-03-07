@@ -5,51 +5,6 @@
   background-repeat: no-repeat;
   position: relative;
   background-position: center;
-
-  .profile-banner .btn-primary{
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    color:white;
-    background-color: $slate-gray;
-    border: 0px;
-    color: white;
-    padding: 8px 14px 8px 14px;
-  }
-
-
-  .btn-back{
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    color: white;
-    background-color: $slate-gray;
-    border-color: $slate-gray;
-  }
-}
-
-
-.user-basic-info{
-  h2 {
-    font-size:32px;
-  }
-}
-
-.languages-container {
-  display: flex;
-}
-
-.new-language-button {
-  background-color: $slate-gray;
-  border-color: $slate-gray;
-}
-
-i.new-language-button{
-  color: white;
-}
-i .new-language-button{
-  color: white;
-  font-size: 24px;
 }
 
 .my-profile {
@@ -64,6 +19,7 @@ i .new-language-button{
     margin-bottom: 0;
   }
 }
+
 .profile-actions {
   display: flex;
   justify-content: space-evenly;
@@ -79,9 +35,6 @@ i .new-language-button{
     right: 4px;
     top: 7px;
     color: $slate-gray;
-  }
-  .new-apt-calendar{
-
   }
 
   a {
@@ -100,6 +53,7 @@ i .new-language-button{
 .language-box {
   border-bottom: 1px solid #dee2e6;
 }
+
 .languages {
   display: flex;
   justify-content: space-around;
@@ -125,7 +79,7 @@ i .new-language-button{
   .native {
     text-align: end;
     font-size: 12px;
-}
+  }
 
   .language-list {
     flex-grow: 1;
@@ -148,8 +102,9 @@ i .new-language-button{
     p {
       margin: 0;
       line-height: 30px;
-    };
+    }
   }
+
   .language-details {
     padding: 16px;
     flex-grow: 1;
@@ -164,14 +119,11 @@ i .new-language-button{
     display: flex;
     justify-content: space-between;
 
-
-
   h2 {
     font-size: 18px;
     margin-bottom: 0;
     font-weight: 600;
   }
-
 }
 
 .bio {

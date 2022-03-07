@@ -24,8 +24,10 @@ languages.each do |language|
     flagcode = I18nData.language_code(language)
     flagcode = flagcode.downcase unless flagcode.nil?
     puts "#{language} - #{flagcode}"
-    language_instance = Language.create(name: language, flagcode: flagcode) if find_flag(flagcode)
-    language_objects.push(language_instance)
+    if find_flag(flagcode)
+      language_instance = Language.create!(name: language, flagcode: flagcode)
+      language_objects.push(language_instance)
+    end
 end
 Language.create(name:"Irish", flagcode:"ie")
 users = []
@@ -49,26 +51,26 @@ users = []
   users.push(user)
 end
 
-# user_languages = []
-# 10.times do |t|
-#   puts t
-#   user_language = UserLanguage.new(
-#     skill_level: (1..5).to_a.sample
-#   )
-#   user_language.user = users.sample
-#   user_language.language = language_objects.sample
-#   user_language.save
-#   user_languages.push(user_language)
-# end
-# p user_languages
+user_languages = []
+10.times do |t|
+  puts t
+  user_language = UserLanguage.new(
+    skill_level: (1..5).to_a.sample
+  )
+  user_language.user = users.sample
+  user_language.language = language_objects.sample
+  user_language.save!
+  user_languages.push(user_language)
+end
+p user_languages
 
-# 3.times do |t|
-#   puts t
-#   appt = Appointment.new(
-#     location: "Cologne",
-#     datetime: DateTime.strptime("09/01/2009 17:00", "%m/%d/%Y %H:%M")
-#   )
-#   appt.asker_language = user_languages.sample
-#   appt.receiver_language = user_languages.sample
-#   appt.save
-# end
+3.times do |t|
+  puts t
+  appt = Appointment.new(
+    location: "Cologne",
+    datetime: DateTime.strptime("09/01/2009 17:00", "%m/%d/%Y %H:%M")
+  )
+  appt.asker_language = user_languages.sample
+  appt.receiver_language = user_languages.sample
+  appt.save
+end

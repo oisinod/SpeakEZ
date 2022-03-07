@@ -16,11 +16,27 @@
   <%# Need to replace language name with flag thingys %>
   <div class="appt-languages">
     <div class="language-details">
-      You: <%= @user_language %>
+      <div class="name">
+        You:
+      </div>
+      <div class="flag-circle-profile">
+        <% @user_language.skill_level.times do |rating|  %>
+          <div class="quarter level-<%= rating + 1 %>"></div>
+        <% end %>
+        <div class="cutout" style= "background: url('<%= asset_path "flags/#{@user_language.language.flagcode}.svg" %>'); background-size:cover;" ></div>
+      </div>
     </div>
     <div class="divider"></div>
     <div class="language-details">
-      <%= @partner.first_name %>: <%= @partner_language %>
+      <div class="name">
+        <%= @partner.first_name %>:
+      </div>
+      <div class="flag-circle-profile">
+        <% @user_language.skill_level.times do |rating|  %>
+          <div class="quarter level-<%= rating + 1 %>"></div>
+        <% end %>
+        <div class="cutout" style= "background: url('<%= asset_path "flags/#{@partner_language.language.flagcode}.svg" %>'); background-size:cover;" ></div>
+      </div>
     </div>
   </div>
   <div class="appt-datetime">
@@ -32,6 +48,9 @@
       <%= @appt.datetime.strftime("%-d %b %Y at %k:%M") %><br>
       <%= @appt.location %>
     </div>
+  </div>
+  <div class="appt-map" data-controller="mapbox" data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   <div class="appt-options">
     <%= render 'show_options', partner: @partner, appt: @appt %>

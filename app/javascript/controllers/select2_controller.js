@@ -4,18 +4,24 @@ import "select2";
 
 const selectbox = document.getElementById("selectbox")
 const searchbox = document.querySelector(".select2-search__field")
+const userSelectbox = document.getElementById("search_user_language")
 
-
-  $(selectbox).select2(
+const makeSelect2 = (element) => {
+  $(element).select2(
     { tags: false,
-      theme: 'classic',
+      placeholder: 'Choose a language...',
       width:'element',
+      // allowClear: true,
       templateResult: formatFlag,
       templateSelection: formatFlag
-      }
-      );
+    }
+    );
 
       function formatFlag (state) {
+        if (state.id === '') {
+          return 'Choose a language...';
+        }
+
         var baseUrl = "/assets/flags";
         const split = state.text.split(" ")
         var $state = $(
@@ -23,3 +29,7 @@ const searchbox = document.querySelector(".select2-search__field")
         );
         return $state;
       };
+    }
+
+  makeSelect2(selectbox)
+  makeSelect2(userSelectbox)

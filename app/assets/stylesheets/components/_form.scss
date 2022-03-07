@@ -25,6 +25,16 @@
     }
   }
 
+  .form-check-input {
+    &:checked {
+      background-color: $best-green;
+      border-color:  $best-green;
+    }
+
+    &:focus {
+      box-shadow: none;
+  }
+  }
   .btn {
     width: 100%;
   }
@@ -45,4 +55,19 @@
 .br-theme-bars-movie .br-widget .br-current-rating {
   width: 310px;
   color: black;
+}
+
+
+label {
+  display: block;
+}
+
+.user_language_language {
+  .form-label {
+    display: none;
+  }
+
+  .select2-container {
+    margin-top: 16px;   
+  }
 }

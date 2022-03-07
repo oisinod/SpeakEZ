@@ -17,6 +17,7 @@
       <%= f.input :photo, as: :file %>
       <%= f.input :nationality %>
       <%= f.input :age %>
+      <%= f.input :bio, label: "Tell others about yourself" %>
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

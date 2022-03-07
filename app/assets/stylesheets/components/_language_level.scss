@@ -4,10 +4,16 @@
 .select2-results__option{}
 
 .flag-circle-profile{
-	position:relative;
-	width:52px;
-	height:40px;
-	margin:0 auto;
+  position: relative;
+  width:30px;
+	height:30px;
+  margin: inherit;
+}
+
+.flag-circle-appt {
+  width:30px;
+	height:30px;
+  margin: inherit;
 }
 
 .flag-circle-card{

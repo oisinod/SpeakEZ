@@ -7,9 +7,15 @@ class UsersController < ApplicationController
       #gets the instances of the user languages, will then filter by who is learning it or not
       @user_languages = @language.user_languages
       # have all the users which have this language as a user language, now i need to filter by the ones that have learning as false
-      @users = @user_languages.where(learning: false).map do |user_language|
-        user_language.user
-      end
+      @users = @user_languages.where(learning: false).map {|user_language| user_language.user} unless @user_languages.nil?
+    end
+
+    if params[:search].present?
+      @language = Language.find_by(name: params[:search][:user_language].split(" ")[1])
+      #gets the instances of the user languages, will then filter by who is learning it or not
+      @user_languages = @language.user_languages
+      # have all the users which have this language as a user language, now i need to filter by the ones that have learning as false
+      @users = @user_languages.where(learning: false).map {|user_language| user_language.user} unless @user_languages.nil?
     end
   end
 

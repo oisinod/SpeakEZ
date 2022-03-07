@@ -1,0 +1,11 @@
+<div class="profile-actions">
+  <%= link_to new_user_appointment_path(user) do %>
+    <div class="make-appointment">
+      <%= icon('fas', 'calendar-alt', class: "fa new-apt-calendar") %>
+      <%= icon('fas', 'plus', class: "new-apt-plus") %>
+    </div>
+  <% end %>
+  <%= link_to "#" do %>
+    <%= icon('far', 'comment', class: "fa") %>
+  <% end %>
+</div>

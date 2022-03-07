@@ -96,6 +96,11 @@ i .new-language-button{
     }
   }
 
+  .native {
+    text-align: end;
+    font-size: 12px;
+}
+
   .language-list {
     flex-grow: 1;
     flex-basis: 0;

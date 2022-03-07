@@ -28,6 +28,6 @@ class Appointment < ApplicationRecord
   end
 
   def other_user_language(current_user)
-    other_user(current_user) == asker ? a_language : r_language
+    other_user(current_user) == asker ? asker_language : receiver_language
   end
 end

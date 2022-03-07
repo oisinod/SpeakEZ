@@ -12,12 +12,13 @@ class AppointmentsController < ApplicationController
       @user_language = @appt.r_language.name
       @partner_language = @appt.a_language.name
     end
-    @marker = @appt.geocoded.map do |appt|
+    @marker =
       {
-        lat: appt.latitute,
-        lng: appt.longitude
+        lat: @appt.latitude,
+        lng: @appt.longitude
       }
-    end
+
+    @markers = [@marker]
     authorize @appt
   end
 

@@ -33,6 +33,9 @@
       <%= @appt.location %>
     </div>
   </div>
+  <div class="appt-map" data-controller="mapbox" data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
   <div class="appt-options">
     <%= render 'show_options', partner: @partner, appt: @appt %>
 </div>

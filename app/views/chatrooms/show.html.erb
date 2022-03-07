@@ -1,0 +1,22 @@
+<div class="container chatroom"
+      data-controller='chatroom'
+      data-chatroom-chatroom-id-value='<%= @chatroom.id %>'
+      <%# data-CONTROLLER_NAME-VALUE_NAME-value='???' %>
+      >
+  <%# <h1>#<%= @chatroom.name %></h1>
+
+  <div class="messages" data-chatroom-target='messages'>
+    <% @chatroom.messages.each do |message| %>
+      <%= render 'messages/message', message: message %>
+    <% end %>
+  </div>
+
+  <%# <%= simple_form_for [@parent, @child] do |f| %>
+  <%= simple_form_for [@chatroom, @message],
+                      remote: true,
+                      data: { chatroom_target: 'form' } do |f| %>
+    <%= f.input :content,
+                label: false,
+                placeholder: 'Your message' %>
+  <% end %>
+</div>

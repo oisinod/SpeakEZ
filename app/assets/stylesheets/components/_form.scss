@@ -25,6 +25,16 @@
     }
   }
 
+  .form-check-input {
+    &:checked {
+      background-color: $best-green;
+      border-color:  $best-green;
+    }
+
+    &:focus {
+      box-shadow: none;
+  }
+  }
   .btn {
     width: 100%;
   }

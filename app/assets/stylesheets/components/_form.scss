@@ -16,6 +16,7 @@
   .form-actions {
     display: flex;
     justify-content: center;
+    margin-top: 50px;
   }
 
   .form-radio {
@@ -24,7 +25,44 @@
     }
   }
 
+  .form-check-input {
+    &:checked {
+      background-color: $best-green;
+      border-color:  $best-green;
+    }
+
+    &:focus {
+      box-shadow: none;
+  }
+  }
   .btn {
     width: 100%;
+  }
+}
+
+.br-theme-bars-movie .br-widget a.br-selected {
+  background-color: $best-green;
+}
+.br-widget a{
+  background-color: $best-green;
+}
+
+.br-theme-bars-movie .br-widget a {
+  height: 15px;
+  background-color: $light-green;
+}
+
+.br-theme-bars-movie .br-widget .br-current-rating {
+  width: 310px;
+  color: black;
+}
+
+.user_language_language {
+  .form-label {
+    display: none;
+  }
+
+  .select2-container {
+    margin-top: 16px;   
   }
 }

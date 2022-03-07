@@ -1,6 +1,7 @@
 /**
 * Quarter Circles
 */
+.select2-results__option{}
 
 .flag-circle-profile{
 	position:relative;
@@ -15,17 +16,24 @@
   height:30px;
   margin:0 auto;
 }
+
 .flag-circle-landing{
   position:relative;
   width:52px;
   height:52px;
   margin:0 auto;
 }
+
+.img-flag{
+  width: 8%;
+}
+
 .quarter {
 	position:absolute;
 	width:50%;
 	height:50%;
 }
+
 .level-0 {
   top:0;
   right:0;

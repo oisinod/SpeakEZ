@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :user_languages, dependent: :destroy
+  has_many :appointments_as_asker, through: :user_languages, source: :appointments_as_asker_language
+  has_many :appointments_as_receiver, through: :user_languages, source: :appointments_as_receiver_language
   has_many :languages, through: :user_languages
   has_many :messages
   has_one_attached :photo

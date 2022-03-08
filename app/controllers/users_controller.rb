@@ -18,10 +18,11 @@ class UsersController < ApplicationController
       @users = @user_languages.where(learning: false).map {|user_language| user_language.user} unless @user_languages.nil?
     end
 
-    @markers = @users.geocoded.map do |flat|
+    @markers = @users.geocoded.map do |user|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window: render_to_string(partial: "users/index/info_window", locals: { user: user })
       }
     end
   end

@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :messages
   has_one_attached :photo
   validates :username, presence: true, uniqueness: true
-  validates :first_name, :last_name, :phone, :nationality, :age, :location, presence: true
+  validates :first_name, :last_name, :phone, :nationality, :age, :location, :city, presence: true
   validates :age,  numericality: { only_integer: true }
   validates :bio, length: { minimum: 5, maximum: 1000 }, allow_blank: true
 

@@ -17,6 +17,13 @@ class UsersController < ApplicationController
       # have all the users which have this language as a user language, now i need to filter by the ones that have learning as false
       @users = @user_languages.where(learning: false).map {|user_language| user_language.user} unless @user_languages.nil?
     end
+
+    @markers = @users.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show

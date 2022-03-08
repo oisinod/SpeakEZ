@@ -20,3 +20,9 @@
     font-size: 8px;
   }
 }
+
+#messages {
+  position: relative;
+  max-height: 80vh;
+  overflow: scroll;
+}

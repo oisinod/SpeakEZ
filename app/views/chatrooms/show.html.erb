@@ -1,5 +1,3 @@
-
-
 <div class="container chatroom"
       data-controller='chatroom'
       data-chatroom-chatroom-id-value='<%= @chatroom.id %>'
@@ -10,7 +8,6 @@
     <% @chatroom.messages.each do |message| %>
       <%= render 'messages/message', message: message %>
     <% end %>
-
   </div>
 
   <%= simple_form_for [@chatroom, @message],

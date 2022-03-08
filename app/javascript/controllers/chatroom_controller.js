@@ -7,10 +7,6 @@ export default class extends Controller {
 
   connect() {
     console.log('connecting to the chatroom')
-    // console.log('hello world')
-    // console.log(this.messagesTarget)
-    // console.log(this.formTarget)
-    // console.log(this.chatroomIdValue)
 
     this.channel = consumer.subscriptions.create(
       // What to connect to

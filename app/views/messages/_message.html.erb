@@ -1,7 +1,11 @@
-<div id="message-<%= message.id %>">
+
+<div class="<%= (current_user[:id] == message.user[:id]) ? 'message-user' : 'message-not-user'%>" id="message-<%= message.id %>">
   <small>
-    <strong><%= message.user.username %></strong>
+    <%# <strong><%= message.user.username %></strong>
+    <%# <strong><%= message.user[:id] %></strong>
+    <%# <%= current_user[:id] %>
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+
   </small>
   <p><%= message.content %></p>
 </div>

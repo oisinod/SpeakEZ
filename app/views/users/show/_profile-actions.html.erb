@@ -5,7 +5,7 @@
       <%= icon('fas', 'plus', class: "new-apt-plus") %>
     </div>
   <% end %>
-  <%= link_to "#" do %>
+  <%= link_to chatrooms_path(user_id: params[:id]), method: :post do %>
     <%= icon('far', 'comment', class: "fa") %>
   <% end %>
 </div>

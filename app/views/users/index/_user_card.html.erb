@@ -3,7 +3,7 @@
   <div class="user-infos">
     <h2><%= user.first_name %>, <%= user.age %> - <%= user.location.capitalize %></h2>
     <p class="text-wrap text-break"><%= user.bio.truncate(85, separator: ' ') if user.bio %></p>
-    <div class="card-languages d-flex justify-content-start w-100">
+    <div class="card-languages d-flex">
       <%= render "shared/speaks_learning_card", user: user %>
 
     </div>

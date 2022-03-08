@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="card-flags d-flex flex-row <%= 'd-none' if user.user_languages.where(learning:true).count == 0  %>">
-        <p class="m-0">Learning:</p>
+        <p class="m-0">Learning: </p>
         <div class="languages d-flex">
           <% learn_languages = user.user_languages.where(learning:true) %>
           <% learn_language =  user.user_languages.where(learning:true).sort_by(&:skill_level).reverse.first %>

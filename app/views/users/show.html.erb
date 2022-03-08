@@ -15,7 +15,7 @@
   </div>
 
   <% if @user != current_user %>
-    <%= render "users/show/profile-actions", user: @user %>
+    <%= render "users/show/profile-actions", user: @user, chatroom: @chatroom %>
   <% end %>
 
   <div class="profile-header">

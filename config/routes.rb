@@ -4,13 +4,14 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     resources :user_languages, only: [:new, :create]
     resources :appointments, only: [:new, :create]
+    resources :chatrooms, only: [:show ] do
+      resources :messages, only: :create
+    end
   end
   resources :appointments, only: [:show, :edit, :update, :destroy]
   get "/dashboard", to: "dashboard#show", as: :dashboard
 
-  resources :chatrooms, only: [:show, :create ] do
-    resources :messages, only: :create
-  end
+  resources :chatrooms, only: [:create ]
 
   get "/test", to: "pages#test"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

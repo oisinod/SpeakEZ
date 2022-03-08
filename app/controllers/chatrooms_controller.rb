@@ -2,18 +2,17 @@ class ChatroomsController < ApplicationController
   def show
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
+    @user = current_user
     authorize @chatroom
   end
 
   def create
+    @chatrooms = Chatroom.all
     @chatroom = Chatroom.new
-    current_user.chatrooms << @chatroom
-    User.find(params[:user_id]).chatrooms << @chatroom
+    @chatroom.users << current_user
+    @chatroom.save
+    @chatroom.users << User.find(params[:user_id])
+    @chatroom.save
     authorize @chatroom
-    if @chatroom.save
-      redirect_to @chatroom
-    else
-      render "users/show"
-    end
   end
 end

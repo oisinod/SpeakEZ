@@ -24,5 +24,7 @@ class UsersController < ApplicationController
     authorize @user
     @learning = @user.user_languages.where(learning: true)
     @speaking = @user.user_languages.where(learning: false)
+    @chatrooms = User.find(params[:id]).chatrooms
+    @chatroom = @chatrooms.select {|chatroom| chatroom.users.first == current_user || chatroom.users.last == current_user}
   end
 end

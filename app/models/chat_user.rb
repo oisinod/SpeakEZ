@@ -20,6 +20,5 @@ class ChatUser < ApplicationRecord
         errors.add(:chatroom, "chatroom created for these users already")
       end
     end
-      
   end
 end

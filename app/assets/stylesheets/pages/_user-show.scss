@@ -5,64 +5,132 @@
   background-repeat: no-repeat;
   position: relative;
   background-position: center;
+}
 
-  .profile-banner .btn-primary{
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    color:white;
-    background-color: $slate-gray;
-    border: 0px;
-    color: white;
-    padding: 8px 14px 8px 14px;
-    .new-apt-plus{
-      position: absolute;
-      font-size: 14px;
-      right: 3px;
-      top: 2px;
-      color: white;
-
-    }
-    .new-apt-calendar{
-      color: white;
-    }
-  }
-
-
-  .btn-back{
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    color: white;
-    background-color: $slate-gray;
-    border-color: $slate-gray;
+.my-profile {
+  .fa {
+    color: $slate-gray;
+    margin-right: 12px ;
   }
 }
 
-
-.user-basic-info{
+.headline-text {
   h2 {
-    font-size:32px;
+    margin-bottom: 0;
   }
 }
 
-.languages-container {
+.profile-actions {
   display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #dee2e6;
+
+  .make-appointment {
+    position: relative;
+  }
+
+  .new-apt-plus{
+    position: absolute;
+    font-size: 14px;
+    right: 4px;
+    top: 7px;
+    color: $slate-gray;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .fa {
+    color: $slate-gray;
+    font-size: 33px;
+    padding: 13px;
+    margin: 0;
+  }
 }
 
-.new-language-button {
-  background-color: $slate-gray;
-  border-color: $slate-gray;
+.language-box {
+  border-bottom: 1px solid #dee2e6;
 }
 
-i.new-language-button{
-  color: white;
-}
-i .new-language-button{
-  color: white;
-  font-size: 24px;
+.languages {
+  display: flex;
+  justify-content: space-around;
+
+  .divider {
+    width: 1px;
+    background-color: #dee2e6;
+  }
+
+  .languages-header {
+   margin-top: 8px;
+   flex-grow: 1;
+   flex-basis: 0;
+   text-align: center;
+
+    h2{
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+  }
+
+  .native {
+    text-align: end;
+    font-size: 12px;
+  }
+
+  .language-list {
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: center;
+    padding: 5px;
+
+    .language {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 5px;
+      justify-content: space-between;
+    }
+
+    .flag-circle-profile {
+      height: 30px;
+      width: 30px;
+      margin-right: inherit;
+    }
+
+    p {
+      margin: 0;
+      line-height: 30px;
+    }
+  }
+
+  .language-details {
+    padding: 16px;
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: center;
+  }
 }
 
-.button a{
+.profile-header {
+    border-bottom: 1px solid #dee2e6;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
 
+  h2 {
+    font-size: 18px;
+    margin-bottom: 0;
+    font-weight: 600;
+  }
+}
+
+.bio {
+  padding: 5px;
+}
+
+.logout {
+  padding: 10px;
 }

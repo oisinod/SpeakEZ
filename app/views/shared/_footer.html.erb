@@ -16,7 +16,7 @@
 
   <div class="icon-box">
     <%# link to search-function %>
-    <%= link_to users_path do %>
+    <%= link_to users_path, data: {turbolinks: "false"} do %>
       <%= icon('fas', 'search', class: "fa-2x") %>
     <% end %>
   </div>

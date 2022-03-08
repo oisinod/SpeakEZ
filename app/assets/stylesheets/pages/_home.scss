@@ -1,5 +1,10 @@
 // Specific CSS for your home-page
 
+//hiding profiler in the top left :corner-present
+.profiler-result{
+  display: none;
+}
+
 .header {
   margin: 5%;
   text-align: center;
@@ -56,4 +61,9 @@
   display: flex;
   justify-content: center;
   height: 35%;
+}
+
+.picture img{
+  width: 85%;
+  object-fit: cover;
 }

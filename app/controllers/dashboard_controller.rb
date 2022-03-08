@@ -5,8 +5,13 @@ class DashboardController < ApplicationController
     @user = current_user
     # this is not ideal, but can't figure out a better way atm
     @appts = Appointment.all
-    # @outgoing = current_user.appointments_as_asker
-    # @incoming = current_user.appointments_as_receiver
-    # @review = Review.new
+    @current_user = current_user
+    start_date = params.fetch(:start_date, Date.today).to_date
+    @appts = Appointment.all
+    @my_appts = @appts.map do |appt|
+     ( appt.asker == current_user || appt.receiver == current_user) ? appt : next
+    end
+    @my_appts.compact!
+    @meetings = Appointment.where(starts_at: start_date.beginning_of_week..start_date.end_of_week)
   end
 end

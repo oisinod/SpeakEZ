@@ -1,5 +1,27 @@
 class AppointmentsController < ApplicationController
 
+  def show
+    @appt = Appointment.find(params[:id])
+    @user = current_user
+    if @user == @appt.asker
+      @partner = @appt.receiver
+      @user_language = @appt.asker_language
+      @partner_language = @appt.receiver_language
+    else
+      @partner = @appt.asker
+      @user_language = @appt.receiver_language
+      @partner_language = @appt.asker_language
+    end
+    @marker =
+      {
+        lat: @appt.latitude,
+        lng: @appt.longitude
+      }
+
+    @markers = [@marker]
+    authorize @appt
+  end
+
   def new
     @receiver = User.find(params[:user_id])
     @asker = current_user
@@ -11,7 +33,8 @@ class AppointmentsController < ApplicationController
 
   def create
     @appt = Appointment.new(appt_params)
-    if @appt.save!
+    @appt.start_time = @appt.datetime
+    if @appt.save
       redirect_to user_path(@appt.receiver)
     else
       render :new

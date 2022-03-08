@@ -1,5 +1,9 @@
 <div data-controller='chat' class="container">
 
+  <div class="top">
+    <h1>much wow</h1>
+  </div>
+
   <h1>#<%= @chatroom %></h1>
   <div id="messages" data-chat-target='messages' data-chatroom-id="<%= @chatroom.id %>" data-current-user-id="<%= current_user.id %>">
     <% @chatroom.messages.each do |message| %>

@@ -13,5 +13,6 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :phone, :nationality, :age, :location, :city, presence: true
   validates :age,  numericality: { only_integer: true }
   validates :bio, length: { minimum: 5, maximum: 1000 }, allow_blank: true
-
+  geocoded_by :location
+  after_validation :geocode
 end

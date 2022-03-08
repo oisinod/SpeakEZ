@@ -36,8 +36,8 @@
 
 .quarter {
 	position:absolute;
-	width:50%;
-	height:50%;
+  width: 60%;
+  height: 60%;
 }
 
 .level-0 {
@@ -47,27 +47,27 @@
 }
 
 .level-1 {
-  top:0;
-  right:0;
-  background-color:$best-green;
+  top: -2px;
+  right: -2px;
+  background-color:  $best-green;
   border-radius:0 100% 0 0 ;
 }
 .level-2 {
-  bottom:0;
-  right:0;
-  background-color:$best-green;
+  bottom: -2px;
+  right: -2px;
+  background-color: $best-green;
   border-radius:0 0 100% 0 ;
 }
 .level-3 {
-  bottom:0;
-	left:0;
-	background-color:$best-green;
+  bottom: -2px;
+  left: -2px;
+	background-color: $best-green;
 	border-radius:0 0 0 100%;
 }
 .level-4 {
-  top:0;
-  left:0;
-  background-color: $best-green;
+  top: -2px;
+  left: -2px;
+  background-color:  $best-green;
   border-radius:100% 0 0 0;
 }
 .cutout {

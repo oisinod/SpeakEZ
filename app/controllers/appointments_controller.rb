@@ -33,7 +33,8 @@ class AppointmentsController < ApplicationController
 
   def create
     @appt = Appointment.new(appt_params)
-    if @appt.save!
+    @appt.start_time = @appt.datetime
+    if @appt.save
       redirect_to user_path(@appt.receiver)
     else
       render :new

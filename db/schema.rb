@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2022_03_07_130637) do
     t.bigint "receiver_language_id", null: false
     t.float "latitude"
     t.float "longitude"
+    t.datetime "start_time"
     t.index ["asker_language_id"], name: "index_appointments_on_asker_language_id"
     t.index ["receiver_language_id"], name: "index_appointments_on_receiver_language_id"
   end

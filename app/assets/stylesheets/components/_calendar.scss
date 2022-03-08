@@ -1,0 +1,19 @@
+.simple-calendar {
+  table {
+  }
+  .day {
+    background-color: #cce5f1;
+    height:90px;
+  }
+  .today {
+    background-color: $baby-powder;
+  }
+}
+
+.calendar-heading{
+  text-align: center;
+}
+
+td {
+  width: 10%;
+}

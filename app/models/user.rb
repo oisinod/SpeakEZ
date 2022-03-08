@@ -14,5 +14,5 @@ class User < ApplicationRecord
   validates :age,  numericality: { only_integer: true }
   validates :bio, length: { minimum: 5, maximum: 1000 }, allow_blank: true
   geocoded_by :location
-  after_validation :geocode
+  after_validation :geocode, if: :will_save_change_to_location?
 end

@@ -9,8 +9,9 @@ const userSelectbox = document.getElementById("search_user_language")
 const makeSelect2 = (element) => {
   $(element).select2(
     { tags: false,
+      theme: 'flat',
       placeholder: 'Choose a language...',
-      width:'element',
+      width:'resolve',
       // allowClear: true,
       templateResult: formatFlag,
       templateSelection: formatFlag

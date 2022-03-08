@@ -18,9 +18,9 @@
 
 .flag-circle-card{
   position:relative;
-  width:30px;
-  height:30px;
-  margin:0 auto;
+  width:25px;
+  height:25px;
+  margin:0 3px;
 }
 
 .flag-circle-landing{
@@ -49,25 +49,25 @@
 .level-1 {
   top:0;
   right:0;
-  background-color:#A5E6C8;
+  background-color:$best-green;
   border-radius:0 100% 0 0 ;
 }
 .level-2 {
   bottom:0;
   right:0;
-  background-color:#A5E6C8;
+  background-color:$best-green;
   border-radius:0 0 100% 0 ;
 }
 .level-3 {
   bottom:0;
 	left:0;
-	background-color:#A5E6C8;
+	background-color:$best-green;
 	border-radius:0 0 0 100%;
 }
 .level-4 {
   top:0;
   left:0;
-  background-color: #A5E6C8;
+  background-color: $best-green;
   border-radius:100% 0 0 0;
 }
 .cutout {

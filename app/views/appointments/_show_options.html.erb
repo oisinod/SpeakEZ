@@ -1,5 +1,7 @@
   <div class="message">
+  <%= link_to user_chatroom_path(partner, chatroom.first) do %>
     Message <%= partner.first_name %> <%= icon('far', 'comment', class: "fa") %>
+  <% end %>
   </div>
 
 <% if appt.receiver == current_user && appt.status == 'pending' %>

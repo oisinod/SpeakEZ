@@ -1,18 +1,19 @@
 <div class="calendar-dashboard">
-
   <%= month_calendar(events: @my_appts) do |date, meetings| %>
     <%= date.day %>
         <%# <% raise %>
 
     <% meetings.each do |meeting| %>
+      <%= link_to appointment_path(meeting) do %>
       <div class="meeting">
         <div class="flag-circle-profile">
-          <%= meeting.other_user_language(current_user).skill_level.times do |rating|  %>
+          <% meeting.other_user_language(current_user).skill_level.times do |rating|  %>
             <div class="quarter level-<%= rating + 1 %>"></div>
           <% end %>
           <div class="cutout" style= "background: url('<%= asset_path "flags/#{meeting.other_user_language(current_user).language.flagcode}.svg" %>'); background-size:cover;" ></div>
         </div>
       </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>

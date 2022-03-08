@@ -3,6 +3,7 @@ class Appointment < ApplicationRecord
   belongs_to :receiver_language, class_name: "UserLanguage"
   has_one :chatroom
   geocoded_by :location
+  validates :datetime, presence:true
   after_validation :geocode
 
   def asker

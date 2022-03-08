@@ -1,9 +1,12 @@
 .simple-calendar {
   table {
-    min-height: 80vh;
+  }
+  .day {
+    background-color: #cce5f1;
+    height:50px;
   }
   .today {
-    background-color: #FAF3DD;
+    background-color: $baby-powder;
   }
 }
 
@@ -11,10 +14,6 @@
 
 }
 
-.meeting:hover {
-  background: $best-green;
-  color: white;
-}
 
 .calendar-dashboard{
 

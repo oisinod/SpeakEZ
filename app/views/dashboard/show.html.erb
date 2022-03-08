@@ -3,22 +3,13 @@
 
 <div class="container mt-4">
   <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">SpeakEZs</button>
+    <div class="nav nav-tabs mb-2" id="nav-tab" role="tablist">
+      <button class="nav-link active " id="nav-calendar-tab" data-bs-toggle="tab" data-bs-target="#nav-calendar" type="button" role="tab" aria-controls="nav-calendar" aria-selected="true">SpeakEZs</button>
       <button class="nav-link" id="nav-incoming-tab" data-bs-toggle="tab" data-bs-target="#nav-incoming" type="button" role="tab" aria-controls="nav-incoming" aria-selected="false">Incoming</button>
       <button class="nav-link" id="nav-outgoing-tab" data-bs-toggle="tab" data-bs-target="#nav-outgoing" type="button" role="tab" aria-controls="nav-outgoing" aria-selected="false">Outgoing</button>
-      <button class="nav-link" id="nav-calendar-tab" data-bs-toggle="tab" data-bs-target="#nav-calendar" type="button" role="tab" aria-controls="nav-calendar" aria-selected="false">📅</button>
     </div>
   </nav>
   <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-      <%# display confirmed meetings %>
-      <% @appts.each do |a| %>
-        <% if a.status == "confirmed" %>
-          <%= render "card", a: a %>
-        <% end %>
-      <% end %>
-    </div>
     <div class="tab-pane fade" id="nav-incoming" role="tabpanel" aria-labelledby="nav-incoming-tab">
       <%# display incoming pending requests %>
       <% @appts.each do |a| %>
@@ -35,7 +26,7 @@
         <% end %>
       <% end %>
     </div>
-    <div class="tab-pane fade" id="nav-calendar" role="tabpanel" aria-labelledby="nav-calendar">
+    <div class="tab-pane fade active show" id="nav-calendar" role="tabpanel" aria-labelledby="nav-calendar">
       <%# display outgoing pending requests %>
       <%= render "calendar" %>
     </div>

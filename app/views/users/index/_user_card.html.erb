@@ -5,7 +5,7 @@
     <p class="text-wrap text-break"><%= user.bio.truncate(75) if user.bio %></p>
     <div class="card-languages d-flex justify-content-between w-100">
 
-      <div class="card-flags d-flex flex-column">
+      <div class="card-flags d-flex flex-column <%= 'd-none' if user.user_languages.where(learning:false).count == 0  %>">
         <p class="m-0">Speaks:</p>
         <div class="languages d-flex">
           <% user.user_languages.where(learning:false).each do |user_language| %>
@@ -13,7 +13,7 @@
           <% end %>
         </div>
       </div>
-     <div class="card-flags d-flex flex-column">
+     <div class="card-flags d-flex flex-column <%= 'd-none' if user.user_languages.where(learning:true).count == 0  %>">
         <p class="m-0">Learning:</p>
         <div class="languages d-flex">
           <% user.user_languages.where(learning:true).each do |user_language| %>

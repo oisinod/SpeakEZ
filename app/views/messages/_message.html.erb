@@ -1,11 +1,7 @@
+<div class="<%= local_assigns[:css_class] %> message_card my-3 p-3 w-50" id="message-<%= message.id %>" data-sender-id="<%= message.user.id %>">
+  <i class="text-right">
+    <p><%= message.content %></p>
 
-<div class="<%= (current_user[:id] == message.user[:id]) ? 'message-user' : 'message-not-user'%>" id="message-<%= message.id %>">
-  <small>
-    <%# <strong><%= message.user.username %></strong>
-    <%# <strong><%= message.user[:id] %></strong>
-    <%# <%= current_user[:id] %>
-    <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-
-  </small>
-  <p><%= message.content %></p>
+    <small><%= message.created_at.strftime("%b %e - %l:%M %p") %></small>
+  </i>
 </div>

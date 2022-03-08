@@ -1,23 +1,15 @@
 class MessagesController < ApplicationController
   def create
-    @message = Message.new(strong_params)
     @chatroom = Chatroom.find params[:chatroom_id]
+    @user = current_user
+    @message = Message.new(strong_params)
+    @message.user = @user
     @message.chatroom = @chatroom
-    @message.user = current_user
+    authorize @message
 
     if @message.save
-      # broadcast to the channel
-      ChatroomChannel.broadcast_to(
-        @chatroom,
-        # the message as HTML
-        render_to_string(
-          partial: 'messages/message',
-          locals: { message: @message }
-        )
-      )
-      head :ok # respond with a 200 STATUS
-
-      # redirect_to chatroom_path(@chatroom.id, anchor: "message-#{@message.id}")
+      # redirect_to chatroom_path(@chatroom)
+      broadcast(@chatroom, @message)
     else
       render 'chatrooms/show'
     end
@@ -25,9 +17,14 @@ class MessagesController < ApplicationController
 
   private
 
-  # filter what comes from the form
   def strong_params
-    params.require(:message)
-          .permit(:content)
+    params.require(:message).permit(:content)
+  end
+
+  def broadcast(chatroom, message)
+    ChatroomChannel.broadcast_to(
+      chatroom,
+      render_to_string(partial: "message", locals: { message: message })
+    )
   end
 end

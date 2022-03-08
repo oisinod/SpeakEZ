@@ -14,3 +14,10 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+
+// import { initChatroom } from '../channels/init_chatroom'
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  // initSelect2();
+  // initChatroom();
+});

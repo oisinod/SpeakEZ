@@ -6,7 +6,9 @@ form#new_message{
   width: 90%;
 }
 #message_content{
-  border-radius:5px;
+    box-shadow: none;
+    border: 1px solid $best-green;
+    border-radius: 50px;
 }
 .message-textbox{
   width: 100%;
@@ -21,7 +23,7 @@ form#new_message{
   display:flex;
   justify-content: space-between;
   margin-top: 5px;
-
+  border-bottom: 1px solid #dee2e6;
   h2{
     align-self:center;
     margin-bottom: 0px;
@@ -35,6 +37,10 @@ form#new_message{
   }
   .button{
     padding: 5px 10px;
+  }
+  .back-icon{
+    margin:0px;
+    margin-left:8px;
   }
 }
 

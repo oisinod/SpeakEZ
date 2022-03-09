@@ -8,6 +8,7 @@ export default class extends Controller {
     const stimulusController = this;
     // find my messages DOM element
     const messages = this.messagesTarget;
+    messages.scrollTo(0, messages.scrollHeight)
     // if it exists, we will create the subscription
     if (messages) {
       // find the chatroom id

@@ -1,7 +1,4 @@
-<div class="<%= local_assigns[:css_class] %> message_card my-3 p-3 w-50" id="message-<%= message.id %>" data-sender-id="<%= message.user.id %>">
-  <i class="text-right">
+<div class="<%= local_assigns[:css_class] %> message_card my-3 p-2 w-50" id="message-<%= message.id %>" data-sender-id="<%= message.user.id %>">
     <p><%= message.content %></p>
-
-    <small><%= message.created_at.strftime("%b %e - %l:%M %p") %></small>
-  </i>
+    <small class ="message-timestamp"><%= message.created_at.strftime("%b %e - %l:%M %p") %></small>
 </div>

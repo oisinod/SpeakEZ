@@ -1,10 +1,13 @@
 <div data-controller='chat' class="container">
 
   <div class="top">
-    <div class="dummy-element">
-    <%= link_to :back, class:"button" do %>
-      <%= icon('fas', 'arrow-alt-circle-left') %>
+    <div class="dummy-element align-self-center">
+     <div class="back-icon ">
+    <%= link_to :back, class:"align-self-center" do %>
+      <%= icon('far', 'arrow-alt-circle-left' ) %>
     <% end %>
+  </div>
+
     </div>
   <h2 class="m-0 align-self-center"><%= @other_user.username %></h2>
   <%= link_to @other_user do %>
@@ -26,7 +29,7 @@
   </div>
 
   <%= simple_form_for [@user, @chatroom, @message], data: { chat_target: 'form' }, class: "compose-message", remote:false do |f| %>
-    <div class="message-textbox"><%= f.input :content, label: false , input_html: { class: 'message-input' }   %></div>
+    <div class="message-textbox"><%= f.input :content, label: false, input_html: { class: 'message-input', autocomplete:"off" }   %></div>
     <%= button_tag type: 'submit', class: "button my-button" do %>
       <%= icon('far', 'paper-plane', class: "fa") %>
     <% end %>

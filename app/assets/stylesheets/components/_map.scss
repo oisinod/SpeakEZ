@@ -1,0 +1,63 @@
+.appt-map{
+  height: 200px;
+  width: 100%;
+}
+
+.user-map {
+  .mapboxgl-canvas-container {
+    height: 100%;
+  }
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content > div.mapbox_user {
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: $body-font;
+  width: 175px;
+  background-color: $baby-powder;
+  border-radius: 17%;
+  padding-bottom: 5px;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .name {
+    padding-left: 16px;
+    align-self: center;
+  }
+
+  .card-flags {
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .languages {
+    align-items: center;
+  }
+
+  .add-languages {
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  .mapboxgl-popup-close-button {
+    right: 10px;
+    top: 7px;
+    font-size: 20px;
+  }
+
+}

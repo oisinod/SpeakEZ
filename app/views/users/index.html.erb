@@ -10,7 +10,30 @@
       </div>
     <% end %>
   </div>
-    <% @users.each do |user| %>
-      <%= render "users/index/user_card", user: user  %>
-    <% end %>
+
+  <nav>
+    <div class="nav nav-tabs mb-2" id="nav-tab" role="tablist">
+      <button class="nav-link active " id="nav-calendar-tab" data-bs-toggle="tab" data-bs-target="#nav-calendar" type="button" role="tab" aria-controls="nav-calendar" aria-selected="true">List</button>
+      <button class="nav-link" id="nav-incoming-tab map-btn" data-bs-toggle="tab" data-bs-target="#nav-incoming" type="button" role="tab" aria-controls="nav-incoming" aria-selected="false">Map</button>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade active show" id="nav-calendar" role="tabpanel" aria-labelledby="nav-calendar">
+      <%# display users %>
+      <% @users.each do |user| %>
+        <%= render "users/index/user_card", user: user  %>
+      <% end %>
+    </div>
+    <div class="tab-pane fade" id="nav-incoming" role="tabpanel" aria-labelledby="nav-incoming-tab">
+      <%# display map%>
+      <%= render "users/index/map" %>
+    </div>
+  </div>
+
+
+
+
+
+
+
 </div>

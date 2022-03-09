@@ -97,13 +97,15 @@ a.card-product{
     font-weight: bold;
     margin: 0;
     align-self: flex-start;
+    color: black;
   }
 
   .infos{
     padding: 16px;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
+    color: $slate-gray;
   }
 
   .user-infos {
@@ -146,6 +148,10 @@ a.card-product{
 
     &.declined {
       color: #ff3b00;
+    }
+
+    &.pending {
+      color: $slate-gray;
     }
 
 

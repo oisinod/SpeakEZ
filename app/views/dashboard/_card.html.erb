@@ -8,7 +8,7 @@
   <% my_language = a.r_language.name %>
   <% your_language = a.a_language.name %>
 <% end %>
-<div class="card-requests">
+<%= link_to appointment_path(a), class:"card-requests" do  %>
   <img src="<%= partner.photo.key ? (cloudinary_url partner.photo.key) : "https://images.unsplash.com/photo-1643725173053-ed68676f1878?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" %>"/>
   <div class="status<%= ' confirmed' if a.status == 'confirmed' %><%= ' declined' if a.status == 'declined' %>"><%= a.status %></div>
   <div class="infos">
@@ -20,21 +20,4 @@
     </div>
     <%# just added accept an decline here to test - will move to details page after %>
   </div>
-  <div class="options">
-    <% if current_user == a.asker || a.status == "confirmed" %>
-      <%= link_to appointment_path(a), method: :delete, data: { confirm: "Are you sure?"} do %>
-        <%= icon('fas', 'trash', class: "fa-light", style: "opacity: 0.7;") %>
-      <% end %>
-      <%= link_to edit_appointment_path(a) do %>
-        <%= icon('fas', 'pen', class: "fa-light", style: "opacity: 0.7;") %>
-      <% end %>
-    <% else %>
-      <%= link_to appointment_path(a, q: 0), method: :patch , data: { confirm: "Are you sure?"} do %>
-        <%= icon('fas', 'times-circle', class: "fa", style: "color: #ff3b00") %>
-      <% end %>
-      <%= link_to appointment_path(a, q: 1), method: :patch , data: { confirm: "Are you sure?"} do %>
-        <%= icon('fas', 'check-circle', class: "fa-light", style: "color: #85BAA1;") %>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<% end %>

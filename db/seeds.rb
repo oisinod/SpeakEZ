@@ -37,7 +37,7 @@ languages.each do |language|
 end
 
 user = User.new(
-  email: "test@1.com,",
+  email: "test@1.com",
   password: 123_456,
   username: "Bootcamp is Love",
   location: "Subbelrather Str. 269, 50825 Köln",
@@ -47,7 +47,8 @@ user = User.new(
   bio: Faker::TvShows::GameOfThrones.unique.quote,
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample
+  age: (18..88).to_a.sample,
+  city: "cologne"
 )
 user.save
 users.push(user)
@@ -63,7 +64,8 @@ user = User.new(
   bio: Faker::TvShows::GameOfThrones.unique.quote,
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample
+  age: (18..88).to_a.sample,
+  city: "cologne"
 )
 user.save
 users.push(user)
@@ -79,7 +81,8 @@ user = User.new(
   bio: Faker::TvShows::GameOfThrones.unique.quote,
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample
+  age: (18..88).to_a.sample,
+  city: "cologne"
 )
 user.save
 users.push(user)
@@ -95,7 +98,8 @@ user = User.new(
   bio: Faker::TvShows::GameOfThrones.unique.quote,
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample
+  age: (18..88).to_a.sample,
+  city: "cologne"
 )
 user.save
 users.push(user)
@@ -111,7 +115,25 @@ user = User.new(
   bio: Faker::TvShows::GameOfThrones.unique.quote,
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample
+  age: (18..88).to_a.sample,
+  city: "cologne"
+)
+user.save
+users.push(user)
+
+user = User.new(
+  email: "test@anja.com",
+  password: 123_456,
+  username: "Cruella de Vil",
+  location: "Mathilde-Herz-Weg 12, 50827 Köln",
+  first_name: "Anja",
+  last_name: "Greifenberg",
+  phone: Faker::PhoneNumber.unique.cell_phone,
+  bio: Faker::TvShows::GameOfThrones.unique.quote,
+  nationality: "German",
+  availability: nil,
+  age: "26",
+  city: "cologne"
 )
 user.save
 users.push(user)
@@ -127,7 +149,8 @@ user = User.new(
   bio: Faker::TvShows::GameOfThrones.unique.quote,
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample
+  age: (18..88).to_a.sample,
+  city: "cologne"
 )
 user.save
 users.push(user)
@@ -143,7 +166,8 @@ user = User.new(
   bio: Faker::TvShows::GameOfThrones.unique.quote,
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample
+  age: (18..88).to_a.sample,
+  city: "cologne"
 )
 user.save
 users.push(user)
@@ -159,7 +183,8 @@ user = User.new(
   bio: Faker::TvShows::GameOfThrones.unique.quote,
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample
+  age: (18..88).to_a.sample,
+  city: "cologne"
 )
 user.save
 users.push(user)
@@ -175,7 +200,8 @@ user = User.new(
   bio: Faker::TvShows::GameOfThrones.unique.quote,
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample
+  age: (18..88).to_a.sample,
+  city: "cologne"
 )
 user.save
 users.push(user)
@@ -191,10 +217,29 @@ user = User.new(
   bio: Faker::TvShows::GameOfThrones.unique.quote,
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample
+  age: (18..88).to_a.sample,
+  city: "cologne"
 )
 user.save
 users.push(user)
+
+user = User.new(
+  email: "test@Oisin.com",
+  password: 123_456,
+  username: "Michael Collins",
+  location: "Zugweg 14, 50677 Köln",
+  first_name: "Oisin",
+  last_name: "O Dochartaigh",
+  phone: Faker::PhoneNumber.unique.cell_phone,
+  bio: Faker::TvShows::GameOfThrones.unique.quote,
+  nationality: "Irish",
+  availability: nil,
+  age: "26",
+  city: "cologne"
+)
+user.save
+users.push(user)
+
 
 users.each do |user|
   puts user.username
@@ -207,19 +252,34 @@ users.each do |user|
   user_language.save!
   user_languages.push(user_language)
 
-  language = user_language.language
-  user_language = UserLanguage.new(
-    skill_level: (1..3).to_a.sample,
-    learning: true
-  )
-  user_language.user = user
-  while language == user.languages.first
-    language = language_objects.sample
+  (rand(1..2)).times do
+    language = user_language.language
+    user_language = UserLanguage.new(
+      skill_level: (3..4).to_a.sample
+    )
+    user_language.user = user
+    # language = language_objects.sample unless user_languages.include?(language)
+    language = language_objects.sample while user.languages.include?(language)
+    user_language.language = language
+    user_language.save!
+    user_languages.push(user_language)
   end
-  user_language.language = language
-  user_language.save!
-  user_languages.push(user_language)
+
+  (rand(1..4)).times do
+    language = user_language.language
+    user_language = UserLanguage.new(
+      skill_level: (1..3).to_a.sample,
+      learning: true
+    )
+    user_language.user = user
+    # language = language_objects.sample unless user_languages.include?(language)
+    language = language_objects.sample while user.languages.include?(language)
+    user_language.language = language
+    user_language.save!
+    user_languages.push(user_language)
+  end
 end
+
 
 
 # 20.times do |t|

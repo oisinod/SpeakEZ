@@ -2,11 +2,13 @@ import { Controller } from "stimulus"
 import consumer from '../channels/consumer'
 
 export default class extends Controller {
-  static targets = ['form', 'messages']
+  static targets = ['form', 'messages', 'input']
 
   connect() {
     const stimulusController = this;
     // find my messages DOM element
+    console.log(this.inputTarget)
+    this.inputTarget.focus()
     const messages = this.messagesTarget;
     messages.scrollTo(0, messages.scrollHeight)
     // if it exists, we will create the subscription

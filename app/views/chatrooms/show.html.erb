@@ -29,7 +29,7 @@
   </div>
 
   <%= simple_form_for [@user, @chatroom, @message], data: { chat_target: 'form' }, class: "compose-message", remote:false do |f| %>
-    <div class="message-textbox"><%= f.input :content, label: false, input_html: { class: 'message-input', autocomplete:"off" }   %></div>
+    <div class="message-textbox"><%= f.input :content, label: false, input_html: { class: 'message-input', autocomplete:"off", data: {chat_target: 'input'} }   %></div>
     <%= button_tag type: 'submit', class: "button my-button" do %>
       <%= icon('far', 'paper-plane', class: "fa") %>
     <% end %>

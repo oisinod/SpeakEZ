@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @user = current_user
     if params[:language].present?
       @language = Language.find_by(name: params[:language])
-      #gets the instances of the user languages, will then filter by who is learning it or not
+      # gets the instances of the user languages, will then filter by who is learning it or not
       @user_languages = @language.user_languages
       # have all the users which have this language as a user language, now i need to filter by the ones that have learning as false
       @users = @user_languages.where(learning: false).map {|user_language| user_language.user} unless @user_languages.nil?
@@ -37,5 +37,7 @@ class UsersController < ApplicationController
     authorize @user
     @learning = @user.user_languages.where(learning: true)
     @speaking = @user.user_languages.where(learning: false)
+    @chatrooms = User.find(params[:id]).chatrooms
+    @chatroom = @chatrooms.select {|chatroom| chatroom.users.first == current_user || chatroom.users.last == current_user}
   end
 end

@@ -1,0 +1,64 @@
+.received-message {
+  background-color: #6e8894;
+  color: #FEFEFA;
+  border-radius: 10px 10px 10px 0;
+  overflow-wrap: anywhere;
+  width: max-content;
+  max-width: 80%;
+  min-width: 50%;
+  margin-right: auto;
+
+  small{
+    font-size: 10px;
+    position: absolute;
+    bottom:8px;
+    padding-left: 6px;
+  }
+}
+
+.sent-message {
+  background-color: #FEFEFA;
+  border-radius: 10px 10px 0 10px;
+  overflow-wrap: anywhere;
+  width: max-content;
+  max-width: 80%;
+  min-width: 50%;
+  margin-left: auto;
+
+  small {
+    font-size: 10px;
+    position: absolute;
+    bottom: 8px;
+    right: 14px;
+  }
+}
+
+#messages {
+  position: relative;
+  overflow: scroll;
+  overflow-anchor: auto;
+  height: 70vh;
+  margin-bottom: 3px;
+}
+
+.top {
+  width: 100%;
+  height: 100px;
+}
+
+.message_content {
+  width: 20%;
+}
+
+.message-timestamp{
+  font-size: 10px;
+
+}
+
+.message_card{
+  position: relative;
+
+  p{
+    padding: 5px;
+  }
+}

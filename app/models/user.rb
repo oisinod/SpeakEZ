@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :appointments_as_receiver, through: :user_languages, source: :appointments_as_receiver_language
   has_many :languages, through: :user_languages
   has_many :messages
+  has_many :chat_users, dependent: :destroy
+  has_many :chatrooms, through: :chat_users, dependent: :destroy
   has_one_attached :photo
   validates :username, presence: true, uniqueness: true
   validates :first_name, :last_name, :phone, :nationality, :age, :location, :city, presence: true

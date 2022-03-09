@@ -5,7 +5,13 @@
       <%= icon('fas', 'plus', class: "new-apt-plus") %>
     </div>
   <% end %>
-  <%= link_to "#" do %>
-    <%= icon('far', 'comment', class: "fa") %>
+  <% if chatroom.first.nil? %>
+    <%= link_to chatrooms_path(user_id: params[:id]), method: :post do %>
+      <%= icon('far', 'comment', class: "fa") %>
+    <% end %>
+  <% else %>
+    <%= link_to user_chatroom_path(user, chatroom.first, anchor: (chatroom.first.messages.first ? "#{chatroom.first.messages.last.id}" : "#messages")), data: {turbolinks:false} do %>
+      <%= icon('far', 'comment', class: "fa") %>
+    <% end %>
   <% end %>
 </div>

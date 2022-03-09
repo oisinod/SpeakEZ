@@ -19,6 +19,8 @@ class AppointmentsController < ApplicationController
       }
 
     @markers = [@marker]
+    @chatrooms = @partner.chatrooms
+    @chatroom = @chatrooms.select {|chatroom| chatroom.users.first == current_user || chatroom.users.last == current_user}
     authorize @appt
   end
 

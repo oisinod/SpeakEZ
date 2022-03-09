@@ -1,6 +1,23 @@
-  <div class="message">
-    Message <%= partner.first_name %> <%= icon('far', 'comment', class: "fa") %>
-  </div>
+    <% if chatroom.first.nil? %>
+      <%= link_to chatrooms_path(user_id: params[:id]), method: :post do %>
+      <div class="message">
+        Message <%= partner.first_name %> <%= icon('far', 'comment', class: "fa") %>
+      </div>
+      <% end %>
+    <% else %>
+      <%= link_to user_chatroom_path(partner, chatroom.first, anchor: (chatroom.first.messages.first ? "#{chatroom.first.messages.last.id}" : "#messages")), data: {turbolinks:false} do %>
+      <div class="message">
+        Message <%= partner.first_name %> <%= icon('far', 'comment', class: "fa") %>
+      </div>
+      <% end %>
+    <% end %>
+
+
+
+  <%# <%= link_to user_chatroom_path(partner, chatroom.first) do %>
+    <%# Message <%= partner.first_name %>
+  <%# <% end %>
+  <%# </div> %>
 
 <% if appt.receiver == current_user && appt.status == 'pending' %>
 </div>

@@ -9,11 +9,18 @@ export default class extends Controller {
 
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
-
+    // adding active show classes to map-tab so that map loads directly and can take intended size
+    this.element.parentElement.classList.add("active")
+    this.element.parentElement.classList.add("show")
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
     })
+
+    // removing active show classes form tab so that map doesn't show on the wrong tab
+    this.element.parentElement.classList.remove("active")
+    this.element.parentElement.classList.remove("show")
+
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()

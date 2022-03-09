@@ -4,8 +4,9 @@
 }
 
 .user-map {
-  height: 500px;
-  width: 100%;
+  .mapboxgl-canvas-container {
+    height: 100%;
+  }
 }
 
 .mapboxgl-popup {

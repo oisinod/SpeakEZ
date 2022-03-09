@@ -24,9 +24,13 @@ export default class extends Controller {
   #handleReceivedMessage = (messageHTML) => {
     console.log(messageHTML)
     this.messagesTarget.insertAdjacentHTML('beforeend', messageHTML)
-    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
     this.formTarget.reset()
+    var log = $('#messages');
+    $(function() {this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+    });
+    log.animate({ scrollTop: log.prop('scrollHeight')}, 0);
+    // setTimeout(() => this.messagesTarget.scrollTo(-1000, this.messagesTarget.scrollHeight), 1000)
   }
 
-  
+
 }

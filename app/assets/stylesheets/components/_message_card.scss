@@ -21,8 +21,10 @@
 
 #messages {
   position: relative;
-  height: 74vh;
   overflow: scroll;
+  overflow-anchor: auto;
+  height: 70vh;
+  margin-bottom: 3px;
 }
 
 .top {

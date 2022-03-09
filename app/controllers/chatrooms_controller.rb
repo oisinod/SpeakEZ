@@ -4,6 +4,7 @@ class ChatroomsController < ApplicationController
     @message = Message.new
     @user = current_user
     authorize @chatroom
+    @other_user = @chatroom.users.select{|user| user != current_user}[0]
   end
 
   def create

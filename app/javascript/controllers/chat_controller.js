@@ -43,11 +43,11 @@ export default class extends Controller {
       // Else, add the receiver css
       message.firstChild.classList.add('received-message');
     }
-    messages.scrollTo(0, messages.scrollHeight)
-    this.formTarget.reset()
 
     // insert the element in the DOM
     messages.insertAdjacentElement('beforeend', message);
+    messages.scrollTo(0, messages.scrollHeight)
+    this.formTarget.reset()
   }
 
 }

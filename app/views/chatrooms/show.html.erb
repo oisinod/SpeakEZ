@@ -1,7 +1,15 @@
 <div data-controller='chat' class="container">
 
   <div class="top">
-  <h2>test</h2>
+    <div class="dummy-element">
+    <%= link_to :back, class:"button" do %>
+      <%= icon('fas', 'arrow-alt-circle-left') %>
+    <% end %>
+    </div>
+  <h2 class="m-0 align-self-center"><%= @other_user.username %></h2>
+  <%= link_to @other_user do %>
+  <img class= "chat-avatar" src="<%= @other_user.photo.key ? (cloudinary_url @other_user.photo.key) : "https://images.unsplash.com/photo-1643725173053-ed68676f1878?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" %>" class="rounded-lg"/>
+  <% end %>
   </div>
 
   <h1>#<%= @chatroom %></h1>
@@ -17,7 +25,7 @@
     <% end %>
   </div>
 
-  <%= simple_form_for [@user, @chatroom, @message], data: { chat_target: 'form' }, class: "compose-message" do |f| %>
+  <%= simple_form_for [@user, @chatroom, @message], data: { chat_target: 'form' }, class: "compose-message", remote:false do |f| %>
     <div class="message-textbox"><%= f.input :content, label: false , input_html: { class: 'message-input' }   %></div>
     <%= button_tag type: 'submit', class: "button my-button" do %>
       <%= icon('far', 'paper-plane', class: "fa") %>

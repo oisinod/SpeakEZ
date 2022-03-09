@@ -18,7 +18,8 @@ class UsersController < ApplicationController
         #gets the instances of the user languages, will then filter by who is learning it or not
         @user_languages = @language.user_languages
         # have all the users which have this language as a user language, now i need to filter by the ones that have learning as false
-        @users = @user_languages.map {|user_language| user_language.user} unless @user_languages.nil?
+        @users_all = @user_languages.map {|user_language| user_language.user} unless @user_languages.nil?
+       3333
       end
     end
 

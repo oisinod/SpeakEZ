@@ -2,24 +2,34 @@
   background-color: #6e8894;
   color: #FEFEFA;
   border-radius: 10px 10px 10px 0;
+  overflow-wrap: anywhere;
+  width: max-content;
+  max-width: 80%;
+  min-width: 50%;
+  margin-right: auto;
 
   small{
-    font-size: 8px;
+    font-size: 10px;
     position: absolute;
-    bottom:10px;
+    bottom:8px;
+    padding-left: 6px;
   }
 }
 
 .sent-message {
-  margin-left: 50%;
   background-color: #FEFEFA;
   border-radius: 10px 10px 0 10px;
+  overflow-wrap: anywhere;
+  width: max-content;
+  max-width: 80%;
+  min-width: 50%;
+  margin-left: auto;
 
   small {
-    font-size: 8px;
+    font-size: 10px;
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 8px;
+    right: 14px;
   }
 }
 
@@ -41,9 +51,14 @@
 }
 
 .message-timestamp{
+  font-size: 10px;
 
 }
 
 .message_card{
   position: relative;
+
+  p{
+    padding: 5px;
+  }
 }

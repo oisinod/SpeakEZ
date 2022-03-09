@@ -5,6 +5,8 @@ import "select2";
 const selectbox = document.getElementById("selectbox")
 const searchbox = document.querySelector(".select2-search__field")
 const userSelectbox = document.getElementById("search_user_language")
+const myLanguageSelectbox = document.getElementById("my_language_select_box")
+const yourLanguageSelectbox = document.getElementById("your_language_select_box")
 
 const makeSelect2 = (element) => {
   $(element).select2(
@@ -34,3 +36,5 @@ const makeSelect2 = (element) => {
 
   makeSelect2(selectbox)
   makeSelect2(userSelectbox)
+  makeSelect2(myLanguageSelectbox)
+  makeSelect2(yourLanguageSelectbox)

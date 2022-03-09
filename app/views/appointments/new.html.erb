@@ -1,7 +1,11 @@
-<%# maybe put a back/close thingy on this page if one clicked on accident? %>
 <div class="container mt-4">
+  <div class="back-icon">
+    <%= link_to :back do %>
+      <%= icon('far', 'arrow-alt-circle-left' ) %>
+    <% end %>
+  </div>
   <div class="row justify-content-center">
-    <div class="form">
+    <div class="form request">
       <h2>Send <strong><%= @receiver.first_name %></strong> a SpeakEZ request</h2>
       <%= simple_form_for([@receiver, @appt]) do |f| %>
         <%= render "form", f: f %>

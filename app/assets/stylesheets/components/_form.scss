@@ -1,22 +1,38 @@
 .form {
   padding: 18px;
 
+  &.request {
+    padding-top: 0 !important;
+  }
+
   .form-select {
     background-color: #FEFEFA;
     border-radius: 5px;
     margin-left: 0px !important;
+    border: 1px solid #87baa2;
+    border-radius: 30px;
+    font-size: 14px;
+    color: $slate-gray;
+    height: 39px;
+    background-image: none;
+    padding: 15px;
   }
 
   .form-control {
     background-color: #FEFEFA;
     border-radius: 5px;
     margin-left: 0px !important;
+    border: 1px solid #87baa2;
+    border-radius: 30px;
+    font-size: 14px;
+    color: $slate-gray;
+    height: 39px
   }
 
   .form-actions {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 39px;
   }
 
   .form-radio {
@@ -70,5 +86,24 @@ label {
   .select2-container {
     margin-top: 16px;
     width: 100% !important;
+  }
+}
+
+
+.form-inputs {
+  .select2-container{
+    width: 100% !important;
+    margin-top: 15px;
+    background-color: #FEFEFA;
+    border: 1px solid #87baa2;
+    border-radius: 30px;
+    height: 39px;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    padding-bottom: 1px;
+    padding-left: 8px;
+    font-size: 14px;
+    color: $slate-gray;
   }
 }

@@ -10,4 +10,8 @@ class UserLanguage < ApplicationRecord
   def language_name
     language.name
   end
+
+  def form_input
+    "#{self.language.flagcode} #{self.language.name}"
+  end
 end

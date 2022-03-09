@@ -1,6 +1,12 @@
 <div class="form-inputs">
   <%= f.input :datetime, html5:true, label: "When would you like to meet?",required:true %>
   <%= f.input :location, label: "Where would you like to meet?", required:true %>
-  <%= f.association :asker_language, collection: @a_user_languages, label_method: :language_name, label: "Your language", required:true %>
-  <%= f.association :receiver_language, collection: @r_user_languages, label_method: :language_name,required:true, label: "Language you want to learn from #{@receiver.first_name}" %>
+  <div class="form-inputs">
+    <%= f.association :asker_language, label: "Your language", collection: @a_user_languages, label_method: :form_input, label_html: { id: 'break' }, value_method: :id, include_blank: true, input_html: { id:"my_language_select_box", class:"w-100", data: {controller: "select2", flag:"flag",  select2_options_value: {tags: true}, select2_target: "flag"} } %>
+  </div>
+  <div class="form-inputs">
+    <%= f.association :receiver_language, label: "Language you want to learn from #{@receiver.first_name}",collection: @r_user_languages, label_method: :form_input, label_html: { id: 'break' }, value_method: :id, include_blank: true, input_html: { id:"your_language_select_box", class:"w-100", data: {controller: "select2", flag:"flag",  select2_options_value: {tags: true}, select2_target: "flag"} } %>
+  </div>
+  <%# <%= f.association :asker_language, collection: @a_user_languages, label_method: :language_name, label: "Your language", required:true %>
+  <%# <%= f.association :receiver_language, collection: @r_user_languages, label_method: :language_name,required:true, label: "Language you want to learn from #{@receiver.first_name}" %>
 </div>

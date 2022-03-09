@@ -1,40 +1,11 @@
 <%= link_to user_path(user), class:"card-requests" do  %>
   <img src="<%= user.photo.key ? (cloudinary_url user.photo.key) : "https://images.unsplash.com/photo-1643725173053-ed68676f1878?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" %>" class="rounded-lg"/>
   <div class="user-infos">
-    <h2><%= user.first_name %>, <%= user.age %> - <%= user.location.capitalize %></h2>
+    <h2><%= user.first_name %>, <%= user.age %> - <%= user.city.capitalize %></h2>
     <p class="text-wrap text-break"><%= user.bio.truncate(85, separator: ' ') if user.bio %></p>
-    <div class="card-languages d-flex justify-content-start w-100">
+    <div class="card-languages d-flex">
+      <%= render "shared/speaks_learning_card", user: user %>
 
-      <div class="card-flags d-flex flex-row <%= 'd-none' if user.user_languages.where(learning:false).count == 0  %>">
-        <p class="m-0">Speaks: </p>
-        <div class="languages d-flex">
-          <% speak_languages = user.user_languages.where(learning:false) %>
-          <% speak_language =  user.user_languages.where(learning:false).sort_by(&:skill_level).reverse.first %>
-          <% unless speak_language.nil? %>
-            <%= render "shared/language_level_card", user_language: speak_language%>
-            <% if speak_languages.count > 1 %>
-              <p class="add-languages">
-                 <strong> +<%= speak_languages.count - 1 %></strong>
-              </p>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-     <div class="card-flags d-flex flex-row <%= 'd-none' if user.user_languages.where(learning:true).count == 0  %>">
-        <p class="m-0">Learning:</p>
-        <div class="languages d-flex">
-          <% learn_languages = user.user_languages.where(learning:true) %>
-          <% learn_language =  user.user_languages.where(learning:true).sort_by(&:skill_level).reverse.first %>
-          <% unless learn_language.nil? %>
-            <%= render "shared/language_level_card", user_language: learn_language%>
-            <% if learn_languages.count > 1 %>
-              <p class="add-languages">
-                 <strong> +<%= learn_languages.count - 1 %></strong>
-              </p>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
     </div>
   </div>
 

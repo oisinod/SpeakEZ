@@ -9,11 +9,21 @@ export default class extends Controller {
 
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
+    // adding active show classes to map-tab so that map loads directly and can take intended size
+    this.element.parentElement.classList.add("active")
+    this.element.parentElement.classList.add("show")
+    const displayMap = this.element.id === 'appt-map' ? false : true
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/mapbox/streets-v10",
+      interactive: displayMap
     })
+
+    // removing active show classes form tab so that map doesn't show on the wrong tab
+    this.element.parentElement.classList.remove("active")
+    this.element.parentElement.classList.remove("show")
+
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
@@ -21,8 +31,10 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
       new mapboxgl.Marker({color: "#6E8894"})
         .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
         .addTo(this.map)
     });
   }

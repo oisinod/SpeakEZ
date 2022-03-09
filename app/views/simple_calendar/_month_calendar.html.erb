@@ -1,12 +1,24 @@
 <div class="simple-calendar">
-  <div class="calendar-heading">
-    <%= link_to calendar.url_for_previous_view, class:'text-decoration-none text-muted' do %>
-      <%= icon('fas', 'angle-left') %>
-    <% end %>
-    <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-    <%= link_to calendar.url_for_next_view, class:'text-decoration-none text-muted' do %>
-      <%= icon('fas', 'angle-right') %>
-    <% end %>
+  <div class="calendar-heading d-flex">
+    <div class="availability-key">
+      <div class="first-key d-flex align-items-center">
+        <div class="dimple dimple-green"></div>
+        <div class="ms-1"> Confirmed</div>
+      </div>
+      <div class="second-key d-flex align-items-center">
+        <div class="dimple dimple-yellow ms-2"></div>
+        <div class="ms-1"> Pending</div>
+      </div>
+    </div>
+    <div class="date-changer align-self-center">
+      <%= link_to calendar.url_for_previous_view, class:'text-decoration-none text-muted' do %>
+        <%= icon('fas', 'angle-left') %>
+      <% end %>
+      <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+      <%= link_to calendar.url_for_next_view, class:'text-decoration-none text-muted' do %>
+        <%= icon('fas', 'angle-right') %>
+      <% end %>
+    </div>
   </div>
 
   <table class="table table-striped">

@@ -110,3 +110,25 @@
   }
 
 }
+
+.pending.badge{
+  color: white;
+  background-color: #FFC65A;
+}
+
+.confirmed.badge {
+  color: white;
+  background-color: $best-green;
+}
+
+.declined.badge {
+  color: white;
+  background-color: #f38080;
+}
+
+.export {
+  padding: 0px;
+  color:black;
+  text-decoration: underline;
+  font-size: 12px;
+}

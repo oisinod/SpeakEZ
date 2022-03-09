@@ -45,7 +45,10 @@
       <%= icon('fas', 'map-marker', class: "fa") %> <br>
     </div>
     <div class="text">
-      <%= @appt.datetime.strftime("%-d %b %Y at %k:%M") %><br>
+      <%= @appt.datetime.strftime("%-d %b %Y at %k:%M") %>
+      <%= link_to "https://calendar.google.com/calendar/u/0/r/eventedit?text=SpeakEZ+with+#{@partner.first_name}&dates=#{@appt.datetime.strftime("%Y%m%d\T%k\Z")}&details=SpeakEZ+with+#{@partner.first_name}.+More+details+here:+www.speakeazy.me/appointments/#{@appt.id}&location=#{@appt.location}&sf=true&output=xml", target: "_blank" do %>
+      <div class=" export d-inline">Export to Google calendar</div> <br>
+      <% end %>
       <%= @appt.location %>
     </div>
   </div>

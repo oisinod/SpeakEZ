@@ -1,13 +1,13 @@
 <% if appt.status == 'confirmed' %>
   <h2>You're meeting <%= partner.first_name %></h2>
-  <div class="status confirmed"> <%= appt.status %></div>
+  <div class="status confirmed badge"> <%= appt.status %></div>
 <% elsif appt.asker == current_user && appt.status == 'pending' %>
   <h2>You've sent <%= partner.first_name %> a SpeakEZ invite</h2>
-  <div class="status pending"><%= appt.status %></div>
+  <div class="status pending badge"><%= appt.status %></div>
 <% elsif appt.receiver == current_user && appt.status == 'pending' %>
   <h2><%= partner.first_name %> is waiting for your response</h2>
-  <div class="status pending"><%= appt.status %></div>
+  <div class="status pending badge"><%= appt.status %></div>
 <% elsif appt.status == 'declined' %>
   <h2>SpeakEZ with <%= partner.first_name %> has been declined</h2>
-  <div class="status declined"><%= appt.status %></div>
+  <div class="status declined badge "><%= appt.status %></div>
 <% end %>

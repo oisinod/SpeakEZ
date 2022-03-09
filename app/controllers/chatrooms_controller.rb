@@ -14,7 +14,7 @@ class ChatroomsController < ApplicationController
     @chatroom.save
     @chatroom.users << User.find(params[:user_id])
     if @chatroom.save
-      redirect_to @chatroom
+      redirect_to user_chatroom_path(User.find(params[:user_id]), @chatroom)
     end
     authorize @chatroom
   end

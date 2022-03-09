@@ -1,7 +1,7 @@
 <div data-controller='chat' class="container">
 
   <div class="top">
-    <h1>much wow</h1>
+  <h2>test</h2>
   </div>
 
   <h1>#<%= @chatroom %></h1>
@@ -18,7 +18,10 @@
   </div>
 
   <%= simple_form_for [@user, @chatroom, @message], data: { chat_target: 'form' }, class: "compose-message" do |f| %>
-    <%= f.input :content, label: false, placeholder: "What's in your mind right now?" %>
-    <%= f.submit 'Send', class: 'btn button', data: { disable_with: false }  %>
+    <div class="message-textbox"><%= f.input :content, label: false , input_html: { class: 'message-input' }   %></div>
+    <%= button_tag type: 'submit', class: "button my-button" do %>
+      <%= icon('far', 'paper-plane', class: "fa") %>
+    <% end %>
+
   <% end %>
 </div>

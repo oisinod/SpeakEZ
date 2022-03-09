@@ -10,7 +10,7 @@
       <%= icon('far', 'comment', class: "fa") %>
     <% end %>
   <% else %>
-    <%= link_to user_chatroom_path(user, chatroom.first, anchor: "message-#{chatroom.first.messages.last.id}"), data: {turbolinks:false} do %>
+    <%= link_to user_chatroom_path(user, chatroom.first, anchor: (chatroom.first.messages.first ? "#{chatroom.first.messages.last.id}" : "#messages")), data: {turbolinks:false} do %>
       <%= icon('far', 'comment', class: "fa") %>
     <% end %>
   <% end %>

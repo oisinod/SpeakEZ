@@ -128,12 +128,12 @@ a.card-product{
   }
 
   .appt-details {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.4;
     opacity: .7;
     margin-bottom: 0;
     margin-top: 8px;
-
+    line-height: 1.5;
   }
 
   .status {
@@ -141,6 +141,7 @@ a.card-product{
     right: 20px;
     top: 10px;
     opacity: 0.7;
+    color: $slate-gray;
 
     &.confirmed {
       color: $best-green;
@@ -149,12 +150,6 @@ a.card-product{
     &.declined {
       color: #ff3b00;
     }
-
-    &.pending {
-      color: $slate-gray;
-    }
-
-
   }
 
   .options {

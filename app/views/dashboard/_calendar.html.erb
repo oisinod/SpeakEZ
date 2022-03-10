@@ -5,7 +5,7 @@
 
     <% meetings.each do |meeting| %>
       <%= link_to appointment_path(meeting) do %>
-      <div class="meeting">
+      <div class="meeting <%= "d-none" if meeting.status == 'declined' %>">
         <div class="flag-circle-profile">
           <div class="dimple-<%= meeting.status == 'confirmed' ? 'green' : 'yellow'%> dimple-calendar"></div>
           <div class="cutout" style= "background: url('<%= asset_path "flags/#{meeting.other_user_language(current_user).language.flagcode}.svg" %>'); background-size:cover;" ></div>

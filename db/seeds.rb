@@ -261,7 +261,7 @@ user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'im
 user.photo.save
 users.push(user)
 
-user = User.new(
+oisin = User.new(
   email: "test@Oisin.com",
   password: 123_456,
   username: "KYLE RAYNER",
@@ -280,9 +280,9 @@ user = User.new(
 # user_languages.save!
 
 photo = URI.open("#{cloudinary_path}IMG_3271_cadqxq")
-user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
-user.save
-user.photo.save
+oisin.photo.attach(io: photo, filename: "#{oisin.username}.jpg", content_type: 'image/jpg')
+oisin.save
+oisin.photo.save
 
 users.each do |user|
   puts user.username
@@ -322,3 +322,21 @@ users.each do |user|
     user_languages.push(user_language)
   end
 end
+
+appt1 = Appointment.new(
+  location: "Ginsterweg, Cologne",
+  datetime: DateTime.strptime("03/13/2022 17:00", "%m/%d/%Y %H:%M"),
+  start_time: DateTime.strptime("03/13/2022 17:00", "%m/%d/%Y %H:%M")
+)
+appt1.asker_language = user_languages.sample
+appt1.receiver_language = UserLanguage.find_by(user: oisin.id)
+appt1.save
+
+appt2 = Appointment.new(
+  location: "Pontstrasse, Aachen",
+  datetime: DateTime.strptime("03/15/2022 15:00", "%m/%d/%Y %H:%M"),
+  start_time: DateTime.strptime("03/15/2022 15:00", "%m/%d/%Y %H:%M")
+)
+appt2.asker_language = user_languages.sample
+appt2.receiver_language = UserLanguage.find_by(user: oisin.id)
+appt2.save

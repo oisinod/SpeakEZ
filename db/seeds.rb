@@ -53,7 +53,7 @@ user = User.new(
   bio: "LeWagon is soooooo nice! When you are done here - learn some Ruby",
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample,
+  age: "25",
   city: "cologne"
 )
 user.save
@@ -63,24 +63,25 @@ user.photo.save
 users.push(user)
 
 user = User.new(
-  email: "test@2.com",
+  email: "test@marc.com",
   password: 123_456,
-  username: "LeWagonLover3",
-  location: "Industriestraße 16, 50735 Köln",
-  first_name: Faker::Name.unique.male_first_name,
-  last_name: Faker::Name.unique.last_name,
+  username: "LeWagonLover",
+  location: "Eigelstein, Köln",
+  first_name: "Marc",
+  last_name: "Hannemann",
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: "I am a friendly guy trying to improve my language skills :D",
+  bio: "Hi, I'm from Germany and love coding and languages. Would love to meet up for a chat!!",
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample,
+  age: "32",
   city: "cologne"
 )
 user.save
-photo = URI.open("#{cloudinary_path}3_y1nxgk.jpg")
-user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
+photo = URI.open("#{cloudinary_path}ima0ixhffks2rnds48qop2292zif_bantgd.jpg")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/webp')
 user.photo.save
 users.push(user)
+
 
 user = User.new(
   email: "test@3.com",
@@ -93,7 +94,7 @@ user = User.new(
   bio: "This app changend my life, let me help you change yours",
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample,
+  age: "23",
   city: "cologne"
 )
 user.save
@@ -102,18 +103,57 @@ user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'im
 user.photo.save
 users.push(user)
 
+anja = User.new(
+  email: "test@anja.com",
+  password: 123_456,
+  username: "Cruella de Vil",
+  location: "Mathilde-Herz-Weg 12, 50827 Köln",
+  first_name: "Anja",
+  last_name: "Greifenberg",
+  phone: Faker::PhoneNumber.unique.cell_phone,
+  bio: "I'm a native German speaker from Cologne, I love meeting new people from different countries and learning languages! Especially looking to learn Irish and would love to meet up over Coffee ☕ (or Beer 🍺 )",
+  nationality: "German",
+  availability: nil,
+  age: "33",
+  city: "cologne"
+)
+anja.save
+photo = URI.open("#{cloudinary_path}43c2zyokuigab5po5rm4is48vn0f.jpg")
+anja.photo.attach(io: photo, filename: "#{anja.username}.jpg", content_type: 'image/jpg')
+anja.photo.save
+
+john = User.new(
+  email: "test@10.com",
+  password: 123_456,
+  username: "StarkatHeart",
+  location: "Sankt-Apern-Straße 17, 50667 Köln",
+  first_name: "John",
+  last_name: "Snow",
+  phone: Faker::PhoneNumber.unique.cell_phone,
+  bio: "I have had a very exciting life and would love to tell you about it and learn a new language while doing it! #winteriscoming",
+  nationality: Faker::Nation.nationality,
+  availability: nil,
+  age: "25",
+  city: "cologne"
+)
+john.save
+photo = URI.open("#{cloudinary_path}4mvzsb9ncmzopvbueaic94nzlw1r.webp")
+john.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/webp')
+john.photo.save
+users.push(john)
+
 user = User.new(
   email: "test@4.com",
   password: 123_456,
   username: "LeWagon is Best",
   location: "Burgwiesenstraße 125, 51067 Köln",
-  first_name: Faker::Name.unique.male_first_name,
+  first_name: Faker::Name.unique.female_first_name,
   last_name: Faker::Name.unique.last_name,
   phone: Faker::PhoneNumber.unique.cell_phone,
   bio: "LeWagon helped me to learn Ruby. Now I will help to learn an other language",
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample,
+  age: "28",
   city: "cologne"
 )
 user.save
@@ -133,7 +173,7 @@ user = User.new(
   bio: "I love using this app and improve my language skills while meeting new people",
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample,
+  age: "41",
   city: "cologne"
 )
 user.save
@@ -142,25 +182,6 @@ user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'im
 user.photo.save
 users.push(user)
 
-user = User.new(
-  email: "test@anja.com",
-  password: 123_456,
-  username: "Cruella de Vil",
-  location: "Mathilde-Herz-Weg 12, 50827 Köln",
-  first_name: "Anja",
-  last_name: "Greifenberg",
-  phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: "I'm a native German speaker from Cologne, I love meeting new people from different countries and learning languages! Especially looking to learn Irish and would love to meet up over Coffee :coffee: (or Beer :beer: )",
-  nationality: "German",
-  availability: nil,
-  age: "26",
-  city: "cologne"
-)
-user.save
-photo = URI.open("#{cloudinary_path}43c2zyokuigab5po5rm4is48vn0f.jpg")
-user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
-user.photo.save
-users.push(user)
 
 user = User.new(
   email: "test@6.com",
@@ -173,7 +194,7 @@ user = User.new(
   bio: "Always available for a spontaneous meeting - lets talk",
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample,
+  age: "35",
   city: "cologne"
 )
 user.save
@@ -187,17 +208,37 @@ user = User.new(
   password: 123_456,
   username: "TrustTheProcess",
   location: "Pferdmengesstraße 12, 50968 Köln",
-  first_name: Faker::Name.unique.female_first_name,
+  first_name: Faker::Name.unique.male_first_name,
   last_name: Faker::Name.unique.last_name,
   phone: Faker::PhoneNumber.unique.cell_phone,
   bio: "All I really need to understand is When you SpeakEZ to me. SpeakEZ to me. SpeakEZ to me SpeakEZ to me. Get jazzy on it...",
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample,
+  age: "59",
   city: "cologne"
 )
 user.save
 photo = URI.open("#{cloudinary_path}4_o1686r.jpg")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
+user.photo.save
+users.push(user)
+
+user = User.new(
+  email: "test@2.com",
+  password: 123_456,
+  username: "LeWagonLover3",
+  location: "Industriestraße 16, 50735 Köln",
+  first_name: Faker::Name.unique.female_first_name,
+  last_name: Faker::Name.unique.last_name,
+  phone: Faker::PhoneNumber.unique.cell_phone,
+  bio: "I am a friendly guy trying to improve my language skills :D",
+  nationality: Faker::Nation.nationality,
+  availability: nil,
+  age: "30",
+  city: "cologne"
+)
+user.save
+photo = URI.open("#{cloudinary_path}3_y1nxgk.jpg")
 user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
 user.photo.save
 users.push(user)
@@ -213,7 +254,7 @@ user = User.new(
   bio: "LeWagon is Love",
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample,
+  age: "37",
   city: "cologne"
 )
 user.save
@@ -227,13 +268,13 @@ user = User.new(
   password: 123_456,
   username: "ILoveThisPitch",
   location: "Blaubach 1, 50676 Köln",
-  first_name: Faker::Name.unique.female_first_name,
+  first_name: Faker::Name.unique.male_first_name,
   last_name: Faker::Name.unique.last_name,
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: "New to cologne. Would nice to meet some people to improve my german",
+  bio: "New to cologne. Would nice to meet some people to improve my German",
   nationality: Faker::Nation.nationality,
   availability: nil,
-  age: (18..88).to_a.sample,
+  age: "22",
   city: "cologne"
 )
 user.save
@@ -242,48 +283,90 @@ user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'im
 user.photo.save
 users.push(user)
 
-user = User.new(
-  email: "test@10.com",
-  password: 123_456,
-  username: "John Snow",
-  location: "Sankt-Apern-Straße 17, 50667 Köln",
-  first_name: Faker::Name.unique.male_first_name,
-  last_name: Faker::Name.unique.last_name,
-  phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: "Do I want to learn an other language? I think yes!",
-  nationality: Faker::Nation.nationality,
-  availability: nil,
-  age: (18..88).to_a.sample,
-  city: "cologne"
-)
-user.save
-photo = URI.open("#{cloudinary_path}4mvzsb9ncmzopvbueaic94nzlw1r.webp")
-user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/webp')
-user.photo.save
-users.push(user)
-
 oisin = User.new(
   email: "test@Oisin.com",
   password: 123_456,
-  username: "KYLE RAYNER",
+  username: "Leprechaun123",
   location: "Zugweg 14, 50677 Köln",
   first_name: "Oisin",
   last_name: "O Dochartaigh",
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: "Irish guy - based in cologne. Always happy to meet someone to improve my german. LeWagon is Love",
+  bio: "Irish guy - based in Cologne. Always happy to meet someone to improve my German. I ❤ LeWagon",
   nationality: "Irish",
   availability: nil,
   age: "26",
   city: "cologne"
 )
-# user_language = UserLanguage.new(skill_level: 5)
-# user_language.language
-# user_languages.save!
 
 photo = URI.open("#{cloudinary_path}IMG_3271_cadqxq.jpg")
 oisin.photo.attach(io: photo, filename: "#{oisin.username}.jpg", content_type: 'image/jpg')
 oisin.save
 oisin.photo.save
+
+# user_languages oisin
+
+oisin_user_language1 = UserLanguage.new(
+  skill_level: "5"
+)
+
+oisin_user_language1.user = oisin
+oisin_user_language1.language = language_objects[1]
+oisin_user_language1.save!
+
+oisin_user_language2 = UserLanguage.new(
+  skill_level: "4"
+)
+
+oisin_user_language2.user = oisin
+oisin_user_language2.language = language_objects[6]
+oisin_user_language2.save!
+
+oisin_user_language3 = UserLanguage.new(
+  skill_level: "3",
+  learning: "true"
+)
+
+oisin_user_language3.user = oisin
+oisin_user_language3.language = language_objects[4]
+oisin_user_language3.save!
+
+oisin_user_language4 = UserLanguage.new(
+  skill_level: "1",
+  learning: "true"
+)
+
+oisin_user_language4.user = oisin
+oisin_user_language4.language = language_objects[3]
+oisin_user_language4.save!
+
+# user_languages anja
+
+anja_user_language1 = UserLanguage.new(
+  skill_level: "5"
+)
+
+anja_user_language1.user = anja
+anja_user_language1.language = language_objects[4]
+anja_user_language1.save!
+
+anja_user_language2 = UserLanguage.new(
+  skill_level: "4"
+)
+
+anja_user_language2.user = anja
+anja_user_language2.language = language_objects[1]
+anja_user_language2.save!
+
+anja_user_language3 = UserLanguage.new(
+  skill_level: "1",
+  learning: true
+)
+
+anja_user_language3.user = anja
+anja_user_language3.language = language_objects[6]
+anja_user_language3.save!
+
+# user languages everyone else
 
 users.each do |user|
   puts user.username
@@ -329,7 +412,7 @@ appt1 = Appointment.new(
   datetime: DateTime.strptime("03/13/2022 17:00", "%m/%d/%Y %H:%M"),
   start_time: DateTime.strptime("03/13/2022 17:00", "%m/%d/%Y %H:%M")
 )
-appt1.asker_language = user_languages.sample
+appt1.asker_language = UserLanguage.find_by(user: john.id)
 appt1.receiver_language = UserLanguage.find_by(user: oisin.id)
 appt1.save
 

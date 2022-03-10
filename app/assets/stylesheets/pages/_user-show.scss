@@ -79,6 +79,10 @@
   .native {
     text-align: end;
     font-size: 12px;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   .language-list {
@@ -86,6 +90,8 @@
     flex-basis: 0;
     text-align: center;
     padding: 5px;
+    display: flex;
+    flex-direction: column;
 
     .language {
       display: flex;

@@ -10,8 +10,6 @@ class MessagesController < ApplicationController
     if @message.save
       # redirect_to chatroom_path(@chatroom)
       broadcast(@chatroom, @message)
-    else
-      render 'chatrooms/show'
     end
   end
 

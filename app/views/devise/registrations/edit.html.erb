@@ -21,6 +21,16 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :username %>
+      <%= f.input :city %>
+      <%= f.input :location, label: "Address (or area/borough/quarter)" %>
+      <%= f.input :phone %>
+      <%= f.input :photo, as: :file %>
+      <%= f.input :nationality %>
+      <%= f.input :age %>
+      <%= f.input :bio, label: "Tell others about yourself" %>
   </div>
 
   <div class="form-actions">

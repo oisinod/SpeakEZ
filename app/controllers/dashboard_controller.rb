@@ -13,5 +13,6 @@ class DashboardController < ApplicationController
     end
     @my_appts.compact!
     @meetings = Appointment.where(starts_at: start_date.beginning_of_week..start_date.end_of_week)
+    @chatrooms = @user.chatrooms
   end
 end

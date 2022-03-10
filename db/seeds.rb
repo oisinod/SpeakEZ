@@ -7,17 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 require 'i18n_data'
+require 'cloudinary'
+require 'open-uri'
 def find_flag(flagcode)
   ActionController::Base.helpers.asset_path("flags/#{flagcode}.svg")
 rescue Sprockets::Rails::Helper::AssetNotFound
   nil
 end
-
+Message.destroy_all
 Appointment.destroy_all
 User.destroy_all
 Language.destroy_all
 UserLanguage.destroy_all
-
+cloudinary_path = "https://res.cloudinary.com/oisinod/image/upload/v1646920303/production/"
 users = []
 user_languages = []
 
@@ -38,7 +40,7 @@ end
 irish = Language.create(name:"Irish", flagcode:"ie")
 language_objects << irish
 language_objects.sort_by!{ |m| m.name.downcase }
-p language_objects
+# language_objects.each_with_index {|l,index| p "#{l.name} #{index}"}
 
 user = User.new(
   email: "test@1.com",
@@ -55,6 +57,9 @@ user = User.new(
   city: "cologne"
 )
 user.save
+photo = URI.open("#{cloudinary_path}2_rafcc6")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -72,6 +77,9 @@ user = User.new(
   city: "cologne"
 )
 user.save
+photo = URI.open("#{cloudinary_path}3_lf2nnm")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -89,6 +97,9 @@ user = User.new(
   city: "cologne"
 )
 user.save
+photo = URI.open("#{cloudinary_path}5_ewq86y.jpg")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -106,6 +117,9 @@ user = User.new(
   city: "cologne"
 )
 user.save
+photo = URI.open("#{cloudinary_path}4_y2n73g")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -123,6 +137,8 @@ user = User.new(
   city: "cologne"
 )
 user.save
+user.photo.key = "1_ctw33u"
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -140,6 +156,9 @@ user = User.new(
   city: "cologne"
 )
 user.save
+photo = URI.open("#{cloudinary_path}43c2zyokuigab5po5rm4is48vn0f")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -157,6 +176,9 @@ user = User.new(
   city: "cologne"
 )
 user.save
+photo = URI.open("#{cloudinary_path}1_gk1pc2")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -174,6 +196,9 @@ user = User.new(
   city: "cologne"
 )
 user.save
+photo = URI.open("#{cloudinary_path}2_x2lcjv")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -191,6 +216,9 @@ user = User.new(
   city: "cologne"
 )
 user.save
+photo = URI.open("#{cloudinary_path}3_oi3vfl")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -208,6 +236,9 @@ user = User.new(
   city: "cologne"
 )
 user.save
+photo = URI.open("#{cloudinary_path}4_g12j0l")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -225,6 +256,9 @@ user = User.new(
   city: "cologne"
 )
 user.save
+photo = URI.open("#{cloudinary_path}4mvzsb9ncmzopvbueaic94nzlw1r")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -244,8 +278,11 @@ user = User.new(
 # user_language = UserLanguage.new(skill_level: 5)
 # user_language.language
 # user_languages.save!
+
+photo = URI.open("#{cloudinary_path}IMG_3271_cadqxq")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
 user.save
-users.push(user)
+user.photo.save
 
 users.each do |user|
   puts user.username
@@ -254,7 +291,7 @@ users.each do |user|
     skill_level: "5"
   )
   user_language.user = user
-  user_language.language = language_objects.sample
+  user_language.language = language_objects[4]
   user_language.save!
   user_languages.push(user_language)
 

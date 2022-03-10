@@ -57,7 +57,7 @@ user = User.new(
   city: "cologne"
 )
 user.save
-photo = URI.open("#{cloudinary_path}2_rafcc6")
+photo = URI.open("#{cloudinary_path}2_rafcc6.jpg")
 user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
 user.photo.save
 users.push(user)

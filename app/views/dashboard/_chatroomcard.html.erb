@@ -1,0 +1,15 @@
+ <% partner = (chatroom.users.select {|user| user != current_user }).first %>
+<%= link_to user_chatroom_path(partner, chatroom),anchor: (chatroom.messages.first ? "#{chatroom.messages.last.id}" : "#messages"), data: {turbolinks:false} do %>
+<div class = "card-requests card-chat">
+ <img src="<%= partner.photo.key ? (cloudinary_url partner.photo.key) : "https://images.unsplash.com/photo-1643725173053-ed68676f1878?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" %>"/>
+  <div class="infos">
+    <h2><%= partner.first_name %></h2>
+    <div class="appt-details">
+     <%= chatroom.messages.last.content unless chatroom.messages.last.nil? %> <br>
+     <%= chatroom.messages.first.created_at unless chatroom.messages.last.nil? %>
+    </div>
+    <%# just added accept an decline here to test - will move to details page after %>
+  </div>
+
+  </div>
+<% end %>

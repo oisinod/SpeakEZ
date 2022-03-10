@@ -7,7 +7,7 @@ const searchbox = document.querySelector(".select2-search__field")
 const userSelectbox = document.getElementById("search_user_language")
 const myLanguageSelectbox = document.getElementById("my_language_select_box")
 const yourLanguageSelectbox = document.getElementById("your_language_select_box")
-
+const selectboxInput = document.getElementById("language-select")
 const makeSelect2 = (element) => {
   $(element).select2(
     { tags: false,

@@ -5,6 +5,10 @@
   display: none;
 }
 
+.logo {
+  margin: 20px;
+}
+
 .header {
   margin: 5%;
   text-align: center;
@@ -13,17 +17,24 @@
     text-align: start;
     margin-left: 10%;
   }
+
+  h2 {
+    font-size: 20px;
+  }
 }
 
 .search {
   margin: 0 auto;
-  text-align: center;
+  text-align: center !important;
   width: 50%;
   margin-bottom: 5%;
 
   form {
     width: 100%;
     margin: 2%;
+  }
+
+  .serach-bar {
   }
 }
 @media(max-width: 796px) {
@@ -38,9 +49,10 @@
 .search-form-control .form-control {
   align-items: center;
   height: 3rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid #E7E7E7;
-  margin: 2%;
+  background-color: #FEFEFA;
+  border: 1px solid #87baa2;
+  border-radius: 30px;
+  margin-bottom: 5px;
 }
 
 .remote {
@@ -53,10 +65,6 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.checkbox {
-
-}
-
 .picture {
   display: flex;
   justify-content: center;
@@ -64,6 +72,7 @@
 }
 
 .picture img{
-  width: 85%;
+  width: 70%;
   object-fit: cover;
+  margin-top: 10px;
 }

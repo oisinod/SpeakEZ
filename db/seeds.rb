@@ -35,6 +35,10 @@ languages.each do |language|
     language_objects.push(language_instance)
   end
 end
+irish = Language.create(name:"Irish", flagcode:"ie")
+language_objects << irish
+language_objects.sort_by!{ |m| m.name.downcase }
+p language_objects
 
 user = User.new(
   email: "test@1.com",
@@ -44,7 +48,7 @@ user = User.new(
   first_name: Faker::Name.unique.female_first_name,
   last_name: Faker::Name.unique.last_name,
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: Faker::TvShows::GameOfThrones.unique.quote,
+  bio: "LeWagon is soooooo nice! When you are done here - learn some Ruby",
   nationality: Faker::Nation.nationality,
   availability: nil,
   age: (18..88).to_a.sample,
@@ -61,7 +65,7 @@ user = User.new(
   first_name: Faker::Name.unique.male_first_name,
   last_name: Faker::Name.unique.last_name,
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: Faker::TvShows::GameOfThrones.unique.quote,
+  bio: "I am a friendly guy trying to improve my language skills :D",
   nationality: Faker::Nation.nationality,
   availability: nil,
   age: (18..88).to_a.sample,
@@ -78,7 +82,7 @@ user = User.new(
   first_name: Faker::Name.unique.female_first_name,
   last_name: Faker::Name.unique.last_name,
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: Faker::TvShows::GameOfThrones.unique.quote,
+  bio: "This app changend my life, let me help you change yours",
   nationality: Faker::Nation.nationality,
   availability: nil,
   age: (18..88).to_a.sample,
@@ -95,7 +99,7 @@ user = User.new(
   first_name: Faker::Name.unique.male_first_name,
   last_name: Faker::Name.unique.last_name,
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: Faker::TvShows::GameOfThrones.unique.quote,
+  bio: "LeWagon helped me to learn Ruby. Now I will help to learn an other language",
   nationality: Faker::Nation.nationality,
   availability: nil,
   age: (18..88).to_a.sample,
@@ -112,7 +116,7 @@ user = User.new(
   first_name: Faker::Name.unique.female_first_name,
   last_name: Faker::Name.unique.last_name,
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: Faker::TvShows::GameOfThrones.unique.quote,
+  bio: "I love using this app and improve my language skills while meeting new people",
   nationality: Faker::Nation.nationality,
   availability: nil,
   age: (18..88).to_a.sample,
@@ -129,7 +133,7 @@ user = User.new(
   first_name: "Anja",
   last_name: "Greifenberg",
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: Faker::TvShows::GameOfThrones.unique.quote,
+  bio: "I'm a native German speaker from Cologne, I love meeting new people from different countries and learning languages! Especially looking to learn Irish and would love to meet up over Coffee :coffee: (or Beer :beer: )",
   nationality: "German",
   availability: nil,
   age: "26",
@@ -146,7 +150,7 @@ user = User.new(
   first_name: Faker::Name.unique.male_first_name,
   last_name: Faker::Name.unique.last_name,
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: Faker::TvShows::GameOfThrones.unique.quote,
+  bio: "Always available for a spontaneous meeting - lets talk",
   nationality: Faker::Nation.nationality,
   availability: nil,
   age: (18..88).to_a.sample,
@@ -163,7 +167,7 @@ user = User.new(
   first_name: Faker::Name.unique.female_first_name,
   last_name: Faker::Name.unique.last_name,
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: Faker::TvShows::GameOfThrones.unique.quote,
+  bio: "All I really need to understand is When you SpeakEZ to me. SpeakEZ to me. SpeakEZ to me SpeakEZ to me. Get jazzy on it...",
   nationality: Faker::Nation.nationality,
   availability: nil,
   age: (18..88).to_a.sample,
@@ -180,7 +184,7 @@ user = User.new(
   first_name: Faker::Name.unique.male_first_name,
   last_name: Faker::Name.unique.last_name,
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: Faker::TvShows::GameOfThrones.unique.quote,
+  bio: "LeWagon is Love",
   nationality: Faker::Nation.nationality,
   availability: nil,
   age: (18..88).to_a.sample,
@@ -197,7 +201,7 @@ user = User.new(
   first_name: Faker::Name.unique.female_first_name,
   last_name: Faker::Name.unique.last_name,
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: Faker::TvShows::GameOfThrones.unique.quote,
+  bio: "New to cologne. Would nice to meet some people to improve my german",
   nationality: Faker::Nation.nationality,
   availability: nil,
   age: (18..88).to_a.sample,
@@ -214,7 +218,7 @@ user = User.new(
   first_name: Faker::Name.unique.male_first_name,
   last_name: Faker::Name.unique.last_name,
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: Faker::TvShows::GameOfThrones.unique.quote,
+  bio: "Do I want to learn an other language? I think yes!",
   nationality: Faker::Nation.nationality,
   availability: nil,
   age: (18..88).to_a.sample,
@@ -226,20 +230,22 @@ users.push(user)
 user = User.new(
   email: "test@Oisin.com",
   password: 123_456,
-  username: "Michael Collins",
+  username: "KYLE RAYNER",
   location: "Zugweg 14, 50677 Köln",
   first_name: "Oisin",
   last_name: "O Dochartaigh",
   phone: Faker::PhoneNumber.unique.cell_phone,
-  bio: Faker::TvShows::GameOfThrones.unique.quote,
+  bio: "Irish guy - based in cologne. Always happy to meet someone to improve my german. LeWagon is Love",
   nationality: "Irish",
   availability: nil,
   age: "26",
   city: "cologne"
 )
+# user_language = UserLanguage.new(skill_level: 5)
+# user_language.language
+# user_languages.save!
 user.save
 users.push(user)
-
 
 users.each do |user|
   puts user.username
@@ -279,44 +285,3 @@ users.each do |user|
     user_languages.push(user_language)
   end
 end
-
-
-
-# 20.times do |t|
-#   puts t
-#   user_language = UserLanguage.new(
-#      skill_level: (1..4).to_a.sample,
-#     learning: true
-#   )
-#   user_language.user = users.sample
-#   user_language.language = language_objects.sample
-#   user_language.save!
-#   user_languages.push(user_language)
-# end
-# p user_languages
-
-# 15.times do |t|
-#   puts t
-#   user_language = UserLanguage.new(
-#     skill_level: (4..5).to_a.sample
-#   )
-#   user_language.user = users.sample
-#   user_language.language = language_objects.sample
-#   user_language.save!
-#   user_languages.push(user_language)
-# end
-# p user_languages
-
-
-
-
-# 5.times do |t|
-#   puts t
-#   appt = Appointment.new(
-#     location: "Cologne",
-#     datetime: DateTime.strptime("09/01/2009 17:00", "%m/%d/%Y %H:%M")
-#   )
-#   appt.asker_language = user_languages.sample
-#   appt.receiver_language = user_languages.sample
-#   appt.save
-# end

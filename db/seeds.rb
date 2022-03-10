@@ -12,8 +12,7 @@ def find_flag(flagcode)
 rescue Sprockets::Rails::Helper::AssetNotFound
   nil
 end
-Cloudinary::Uploader.upload('my_image.jpg')
-# https://api.unsplash.com/search/photos/?client_id=xwnAyCQVJkMLnetHd95BhyEPScvoEOFWaL9YFGUgrzk&query=woman
+Message.destroy_all
 Appointment.destroy_all
 User.destroy_all
 Language.destroy_all
@@ -39,7 +38,7 @@ end
 irish = Language.create(name:"Irish", flagcode:"ie")
 language_objects << irish
 language_objects.sort_by!{ |m| m.name.downcase }
-p language_objects
+# language_objects.each_with_index {|l,index| p "#{l.name} #{index}"}
 
 user = User.new(
   email: "test@1.com",
@@ -56,6 +55,8 @@ user = User.new(
   city: "cologne"
 )
 user.save
+user.photo.key = "2_rafcc6"
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -73,6 +74,8 @@ user = User.new(
   city: "cologne"
 )
 user.save
+user.photo.key = "3_lf2nnm"
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -90,6 +93,8 @@ user = User.new(
   city: "cologne"
 )
 user.save
+user.photo.key = ""
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -107,6 +112,8 @@ user = User.new(
   city: "cologne"
 )
 user.save
+user.photo.key = "4_y2n73g"
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -124,6 +131,8 @@ user = User.new(
   city: "cologne"
 )
 user.save
+user.photo.key = "1_ctw33u"
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -141,6 +150,8 @@ user = User.new(
   city: "cologne"
 )
 user.save
+user.photo.key = "43c2zyokuigab5po5rm4is48vn0f"
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -158,6 +169,8 @@ user = User.new(
   city: "cologne"
 )
 user.save
+user.photo.key = "1_gk1pc2"
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -175,6 +188,8 @@ user = User.new(
   city: "cologne"
 )
 user.save
+user.photo.key = "2_x2lcjv"
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -192,6 +207,8 @@ user = User.new(
   city: "cologne"
 )
 user.save
+user.photo.key = "3_oi3vfl"
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -209,6 +226,8 @@ user = User.new(
   city: "cologne"
 )
 user.save
+user.photo.key = "4_g12j0l"
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -226,6 +245,8 @@ user = User.new(
   city: "cologne"
 )
 user.save
+user.photo.key = "4mvzsb9ncmzopvbueaic94nzlw1r"
+user.photo.save
 users.push(user)
 
 user = User.new(
@@ -246,7 +267,8 @@ user = User.new(
 # user_language.language
 # user_languages.save!
 user.save
-users.push(user)
+user.photo.key = "IMG_3271_cadqxq"
+user.photo.save
 
 users.each do |user|
   puts user.username
@@ -255,7 +277,7 @@ users.each do |user|
     skill_level: "5"
   )
   user_language.user = user
-  user_language.language = language_objects.sample
+  user_language.language = language_objects[4]
   user_language.save!
   user_languages.push(user_language)
 

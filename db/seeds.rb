@@ -12,7 +12,8 @@ def find_flag(flagcode)
 rescue Sprockets::Rails::Helper::AssetNotFound
   nil
 end
-
+Cloudinary::Uploader.upload('my_image.jpg')
+# https://api.unsplash.com/search/photos/?client_id=xwnAyCQVJkMLnetHd95BhyEPScvoEOFWaL9YFGUgrzk&query=woman
 Appointment.destroy_all
 User.destroy_all
 Language.destroy_all

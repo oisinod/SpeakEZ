@@ -77,7 +77,7 @@ user = User.new(
   city: "cologne"
 )
 user.save
-photo = URI.open("#{cloudinary_path}3_lf2nnm")
+photo = URI.open("#{cloudinary_path}3_y1nxgk.jpg")
 user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
 user.photo.save
 users.push(user)
@@ -97,7 +97,7 @@ user = User.new(
   city: "cologne"
 )
 user.save
-photo = URI.open("#{cloudinary_path}5_ewq86y.jpg")
+photo = URI.open("#{cloudinary_path}4_mrbdzy.jpg")
 user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
 user.photo.save
 users.push(user)
@@ -117,7 +117,7 @@ user = User.new(
   city: "cologne"
 )
 user.save
-photo = URI.open("#{cloudinary_path}4_y2n73g")
+photo = URI.open("#{cloudinary_path}1_h6jld0.jpg")
 user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
 user.photo.save
 users.push(user)
@@ -137,7 +137,8 @@ user = User.new(
   city: "cologne"
 )
 user.save
-user.photo.key = "1_ctw33u"
+photo = URI.open("#{cloudinary_path}5_ewq86y.jpg")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
 user.photo.save
 users.push(user)
 
@@ -156,7 +157,7 @@ user = User.new(
   city: "cologne"
 )
 user.save
-photo = URI.open("#{cloudinary_path}43c2zyokuigab5po5rm4is48vn0f")
+photo = URI.open("#{cloudinary_path}43c2zyokuigab5po5rm4is48vn0f.jpg")
 user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
 user.photo.save
 users.push(user)
@@ -176,7 +177,7 @@ user = User.new(
   city: "cologne"
 )
 user.save
-photo = URI.open("#{cloudinary_path}1_gk1pc2")
+photo = URI.open("#{cloudinary_path}1_j6zfs9.jpg")
 user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
 user.photo.save
 users.push(user)
@@ -196,7 +197,7 @@ user = User.new(
   city: "cologne"
 )
 user.save
-photo = URI.open("#{cloudinary_path}2_x2lcjv")
+photo = URI.open("#{cloudinary_path}4_o1686r.jpg")
 user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
 user.photo.save
 users.push(user)
@@ -216,7 +217,7 @@ user = User.new(
   city: "cologne"
 )
 user.save
-photo = URI.open("#{cloudinary_path}3_oi3vfl")
+photo = URI.open("#{cloudinary_path}2_qbrrct.jpg")
 user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
 user.photo.save
 users.push(user)
@@ -236,7 +237,7 @@ user = User.new(
   city: "cologne"
 )
 user.save
-photo = URI.open("#{cloudinary_path}4_g12j0l")
+photo = URI.open("#{cloudinary_path}3_nccxxx.jpg")
 user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
 user.photo.save
 users.push(user)
@@ -256,8 +257,8 @@ user = User.new(
   city: "cologne"
 )
 user.save
-photo = URI.open("#{cloudinary_path}4mvzsb9ncmzopvbueaic94nzlw1r")
-user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/jpg')
+photo = URI.open("#{cloudinary_path}4mvzsb9ncmzopvbueaic94nzlw1r.webp")
+user.photo.attach(io: photo, filename: "#{user.username}.jpg", content_type: 'image/webp')
 user.photo.save
 users.push(user)
 
@@ -279,7 +280,7 @@ oisin = User.new(
 # user_language.language
 # user_languages.save!
 
-photo = URI.open("#{cloudinary_path}IMG_3271_cadqxq")
+photo = URI.open("#{cloudinary_path}IMG_3271_cadqxq.jpg")
 oisin.photo.attach(io: photo, filename: "#{oisin.username}.jpg", content_type: 'image/jpg')
 oisin.save
 oisin.photo.save

@@ -309,7 +309,7 @@ users.each do |user|
     user_languages.push(user_language)
   end
 
-  (rand(1..4)).times do
+  (rand(1..3)).times do
     language = user_language.language
     user_language = UserLanguage.new(
       skill_level: (1..3).to_a.sample,

@@ -13,9 +13,11 @@
     border-radius: 30px;
     font-size: 14px;
     color: $slate-gray;
+    line-height: normal;
     height: 39px;
     background-image: none;
-    padding: 15px;
+    padding: 9px;
+    justify-content: center !important;
   }
 
   .form-control {
@@ -26,7 +28,8 @@
     border-radius: 30px;
     font-size: 14px;
     color: $slate-gray;
-    height: 39px
+    height: 39px;
+    line-height: normal;
   }
 
   .form-actions {
@@ -98,12 +101,28 @@ label {
     border: 1px solid #87baa2;
     border-radius: 30px;
     height: 39px;
+    line-height: normal;
     display: flex;
-    justify-content: end;
+    justify-content: center !important;
     flex-direction: column;
     padding-bottom: 1px;
     padding-left: 8px;
     font-size: 14px;
     color: $slate-gray;
   }
+}
+
+.select2-selection {
+  line-height: normal;
+  height: auto !important;
+}
+
+
+
+#select2-search_user_language-container{
+  line-height: normal;
+}
+#language-dropdown-index{
+  line-height: normal;
+  justify-content: center !important;
 }

@@ -35,6 +35,10 @@ languages.each do |language|
     language_objects.push(language_instance)
   end
 end
+irish = Language.create(name:"Irish", flagcode:"ie")
+language_objects << irish
+language_objects.sort_by!{ |m| m.name.downcase }
+p language_objects
 
 user = User.new(
   email: "test@1.com",
@@ -226,7 +230,7 @@ users.push(user)
 user = User.new(
   email: "test@Oisin.com",
   password: 123_456,
-  username: "Michael Collins",
+  username: "KYLE RAYNER",
   location: "Zugweg 14, 50677 Köln",
   first_name: "Oisin",
   last_name: "O Dochartaigh",
@@ -237,9 +241,11 @@ user = User.new(
   age: "26",
   city: "cologne"
 )
+# user_language = UserLanguage.new(skill_level: 5)
+# user_language.language
+# user_languages.save!
 user.save
 users.push(user)
-
 
 users.each do |user|
   puts user.username
@@ -279,44 +285,3 @@ users.each do |user|
     user_languages.push(user_language)
   end
 end
-
-
-
-# 20.times do |t|
-#   puts t
-#   user_language = UserLanguage.new(
-#      skill_level: (1..4).to_a.sample,
-#     learning: true
-#   )
-#   user_language.user = users.sample
-#   user_language.language = language_objects.sample
-#   user_language.save!
-#   user_languages.push(user_language)
-# end
-# p user_languages
-
-# 15.times do |t|
-#   puts t
-#   user_language = UserLanguage.new(
-#     skill_level: (4..5).to_a.sample
-#   )
-#   user_language.user = users.sample
-#   user_language.language = language_objects.sample
-#   user_language.save!
-#   user_languages.push(user_language)
-# end
-# p user_languages
-
-
-
-
-# 5.times do |t|
-#   puts t
-#   appt = Appointment.new(
-#     location: "Cologne",
-#     datetime: DateTime.strptime("09/01/2009 17:00", "%m/%d/%Y %H:%M")
-#   )
-#   appt.asker_language = user_languages.sample
-#   appt.receiver_language = user_languages.sample
-#   appt.save
-# end

@@ -5,38 +5,45 @@
 </div>
   <h2>Today I want to speak:</h2>
 </div>
-
-<div class="languages">
-  <ul class="list-inline text-center">
-    <%  user_languages.where(learning:true).each do |user_language| %>
-      <li class="list-inline-item display-inline-block">
-        <%= link_to users_path( language: "#{user_language.language.name}"), class: "text-decoration-none", data:{turbolinks:false} do  %>
-        <%= render "language_level_landing", user_language: user_language %>
-      </li>
+<div class="">
+<% if @user %>
+  <div class="languages">
+    <ul class="list-inline text-center">
+      <%  user_languages.where(learning:true).each do |user_language| %>
+        <li class="list-inline-item display-inline-block">
+          <%= link_to users_path( language: "#{user_language.language.name}"), class: "text-decoration-none", data:{turbolinks:false} do  %>
+          <%= render "language_level_landing", user_language: user_language %>
+        </li>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
+  </div>
+
+  <div class="search">
+
+    <div class="search-filter"></div>
+
+    <div class="search-bar">
+      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+        <div class="search-form-control form-group">
+          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+        </div>
+      <% end %>
 </div>
-
-<div class="search">
-
-  <div class="search-filter"></div>
-
-  <div class="search-bar">
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-      </div>
-    <% end %>
 
     <div>
       <button class="button" type="submit">Search</button>
     </div>
-
+<% end %>
   </div>
 
 </div>
-
+<% unless @user %>
+  <div class="signin-buttons justify-content-center d-flex mb-5">
+  <%= link_to "Sign in", new_user_session_path, class: "button me-2"%>
+  <%= link_to "Sign up", new_user_registration_path, class: "button"%>
+  </div>
+<% end %>
 <div class="picture">
   <%= image_tag("landing_splash.svg") %>
 </div>

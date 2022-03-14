@@ -3,10 +3,10 @@
   <div class="logo">
   <%= image_tag("LogoMakr-6z0Mjs.png") %>
 </div>
+<% if @user %>
   <h2>Today I want to speak:</h2>
 </div>
 <div class="">
-<% if @user %>
   <div class="languages">
     <ul class="list-inline text-center">
       <%  user_languages.where(learning:true).each do |user_language| %>
@@ -39,7 +39,7 @@
 
 </div>
 <% unless @user %>
-  <div class="signin-buttons justify-content-center d-flex mb-5">
+  <div class="signin-buttons justify-content-center d-flex m-5">
   <%= link_to "Sign in", new_user_session_path, class: "button me-2"%>
   <%= link_to "Sign up", new_user_registration_path, class: "button"%>
   </div>
